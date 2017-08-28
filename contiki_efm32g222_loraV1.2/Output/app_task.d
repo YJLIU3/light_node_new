@@ -101,4 +101,7 @@
 ..\output\app_task.o: ..\LoraWan\mac\Comissioning.h
 ..\output\app_task.o: ..\Project\GY30.h
 ..\output\app_task.o: ..\Device\gyiic.h
+..\output\app_task.o: ..\Project\DHT11.h
+..\output\app_task.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\output\app_task.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ..\output\app_task.o: ..\LoraWan\mac\LoRaMac-api.h

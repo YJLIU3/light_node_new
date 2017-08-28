@@ -125,7 +125,7 @@ Maintainer: Miguel Luis and Gregory Cristian
  * LoRaMac default channels
  */
 // Channel = { Frequency [Hz], { ( ( DrMax << 4 ) | DrMin ) }, Band }
-#define LC1                { 434700000, { ( ( DR_5 << 4 ) | DR_0 ) }, 0 }
+#define LC1                { 434100000, { ( ( DR_5 << 4 ) | DR_0 ) }, 0 }
 #define LC2                { 433375000, { ( ( DR_5 << 4 ) | DR_0 ) }, 0 }
 #define LC3                { 433575000, { ( ( DR_5 << 4 ) | DR_0 ) }, 0 }
 

@@ -6,6 +6,7 @@
 #include "mac_include.h"
 #include "Comissioning.h"
 #include "GY30.h"
+#include "DHT11.h"
 
 #include "LoRaMac-api.h"
 #include "LoRaMac-api-v3.h"
@@ -541,14 +542,14 @@ PROCESS_THREAD(RF_HEARTBEAT_TASK, ev, data)
     PROCESS_WAIT_EVENT_UNTIL(ev==RF_Heartbeat_Post);
     while(1)
     {
-        etimer_set(&et, 128*10 );
+        etimer_set(&et, 128*20 );
         PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
         
          printf("1111111111111111111111111111111111111111111111111111111111111\n");
 
-        
-        TxFrame();
-        sendFrameStatus = LoRaMacSendConfirmedFrame( AppPort, AppData, AppDataSize ,1);//重传次数最大8条
+        DHT11_Read_Data();
+				TxDHTFrame();
+        sendFrameStatus = LoRaMacSendConfirmedFrame( AppPort, AppData, AppDataSize ,2);//重传次数最大8条
         printf("sendFrameStatus:%X\n",sendFrameStatus);
         printf("22222222222222222222222222222222222222222222222222222222222\n");
 

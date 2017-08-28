@@ -115,6 +115,7 @@ Section Cross References
     app_task.o(.text) refers to etimer.o(.text) for etimer_set
     app_task.o(.text) refers to app_task.o(.bss) for AppData
     app_task.o(.text) refers to app_task.o(.data) for AppDataSize
+    app_task.o(.text) refers to dht11.o(.text) for DHT11_Read_Data
     app_task.o(.text) refers to em_wdog.o(.text) for WDOG_Feed
     app_task.o(.constdata) refers to app_task.o(.data) for Board_Init_Task
     app_task.o(.data) refers to app_task.o(.conststring) for .conststring
@@ -169,6 +170,12 @@ Section Cross References
     sx1276.o(.text) refers to utilities.o(.text) for memcpy1
     sx1276.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
     sx1276.o(.text) refers to dfixi.o(.text) for __aeabi_d2iz
+    dht11.o(.text) refers to em_gpio.o(.text) for GPIO_PinModeSet
+    dht11.o(.text) refers to sysdelay.o(.text) for Systick_Delay_mS
+    dht11.o(.text) refers to memcpya.o(.text) for __aeabi_memcpy4
+    dht11.o(.text) refers to printfa.o(i.__0printf) for __2printf
+    dht11.o(.text) refers to dht11.o(.data) for Data_Buf
+    dht11.o(.text) refers to dht11.o(.bss) for AppData
     aes.o(.text) refers to aes.o(.constdata) for sbox
     cmac.o(.text) refers to utilities.o(.text) for memset1
     cmac.o(.text) refers to aes.o(.text) for aes_set_key
@@ -544,8 +551,10 @@ Removing Unused input sections from the image.
     Removing loramaccrypto.o(.revsh_text), (4 bytes).
     Removing sx1276_hal.o(.rev16_text), (4 bytes).
     Removing sx1276_hal.o(.revsh_text), (4 bytes).
+    Removing dht11.o(.rev16_text), (4 bytes).
+    Removing dht11.o(.revsh_text), (4 bytes).
 
-68 unused section(s) (total 2102 bytes) removed from the image.
+70 unused section(s) (total 2110 bytes) removed from the image.
 
 ==============================================================================
 
@@ -557,51 +566,53 @@ Image Symbol Table
 
     RESET                                    0x00000000   Section      184  startup_efm32g.o(RESET)
     ../clib/../cmprslib/zerorunl2.c          0x00000000   Number         0  __dczerorl2.o ABSOLUTE
-    ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
     ../clib/microlib/printf/stubs.s          0x00000000   Number         0  stubs.o ABSOLUTE
     ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
     ../fplib/microlib/f2d.c                  0x00000000   Number         0  f2d.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
     ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
-    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixi.o ABSOLUTE
-    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixui.o ABSOLUTE
-    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
-    ../fplib/microlib/fpflt.c                0x00000000   Number         0  fflti.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  dflti.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  fflti.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
     ../fplib/microlib/fprnd.c                0x00000000   Number         0  drnd.o ABSOLUTE
     ../mathlib/ceil.c                        0x00000000   Number         0  ceil.o ABSOLUTE
@@ -677,6 +688,8 @@ Image Symbol Table
     ..\emlib\src\em_timer.c                  0x00000000   Number         0  em_timer.o ABSOLUTE
     ..\emlib\src\em_usart.c                  0x00000000   Number         0  em_usart.o ABSOLUTE
     ..\emlib\src\em_wdog.c                   0x00000000   Number         0  em_wdog.o ABSOLUTE
+    DHT11.c                                  0x00000000   Number         0  dht11.o ABSOLUTE
+    DHT11.c                                  0x00000000   Number         0  dht11.o ABSOLUTE
     GY30.c                                   0x00000000   Number         0  gy30.o ABSOLUTE
     GY30.c                                   0x00000000   Number         0  gy30.o ABSOLUTE
     cdcmple.s                                0x00000000   Number         0  cdcmple.o ABSOLUTE
@@ -771,11 +784,11 @@ Image Symbol Table
     OnTxNextPacketTimerEvent                 0x00002d8f   Thumb Code    16  app_task.o(.text)
     OnMacEvent                               0x00002daf   Thumb Code   126  app_task.o(.text)
     TxFrame                                  0x00002e2d   Thumb Code    86  app_task.o(.text)
-    process_thread_app_led                   0x00002e83   Thumb Code   168  app_task.o(.text)
-    process_thread_RF_JOIN_TASK              0x00002f2b   Thumb Code   246  app_task.o(.text)
-    process_thread_RF_HEARTBEAT_TASK         0x00003021   Thumb Code   156  app_task.o(.text)
-    process_thread_Board_Init_Task           0x000030bd   Thumb Code   124  app_task.o(.text)
-    process_thread_WDOG_Feed_Task            0x00003139   Thumb Code    82  app_task.o(.text)
+    process_thread_app_led                   0x00002e83   Thumb Code   166  app_task.o(.text)
+    process_thread_RF_JOIN_TASK              0x00002f29   Thumb Code   246  app_task.o(.text)
+    process_thread_RF_HEARTBEAT_TASK         0x0000301f   Thumb Code   160  app_task.o(.text)
+    process_thread_Board_Init_Task           0x000030bf   Thumb Code   124  app_task.o(.text)
+    process_thread_WDOG_Feed_Task            0x0000313b   Thumb Code    82  app_task.o(.text)
     .text                                    0x000032a0   Section        0  loramac.o(.text)
     RxWindowSetup                            0x000032a1   Thumb Code   236  loramac.o(.text)
     OnRxWindow2TimerEvent                    0x0000338d   Thumb Code   136  loramac.o(.text)
@@ -813,79 +826,87 @@ Image Symbol Table
     .text                                    0x0000682c   Section        0  loramaccrypto.o(.text)
     .text                                    0x00006ae4   Section        0  sx1276_hal.o(.text)
     NVIC_SetPriority                         0x00006ae5   Thumb Code    32  sx1276_hal.o(.text)
-    NVIC_EnableIRQ                           0x00006e5d   Thumb Code    22  sx1276_hal.o(.text)
-    NVIC_DisableIRQ                          0x00006e73   Thumb Code    18  sx1276_hal.o(.text)
-    GPIO_PinInGet                            0x00006e85   Thumb Code    22  sx1276_hal.o(.text)
-    GPIO_PinOutClear                         0x00006e9b   Thumb Code    20  sx1276_hal.o(.text)
-    GPIO_PinOutSet                           0x00006eaf   Thumb Code    20  sx1276_hal.o(.text)
-    .text                                    0x00006f30   Section        0  sx1276.o(.text)
-    RxChainCalibration                       0x0000704f   Thumb Code   174  sx1276.o(.text)
-    GetFskBandwidthRegValue                  0x00007311   Thumb Code    50  sx1276.o(.text)
-    .text                                    0x000088dc   Section        0  aes.o(.text)
-    copy_block                               0x000088dd   Thumb Code    66  aes.o(.text)
-    copy_block_nn                            0x0000891f   Thumb Code    24  aes.o(.text)
-    xor_block                                0x00008937   Thumb Code   130  aes.o(.text)
-    copy_and_key                             0x000089b9   Thumb Code   132  aes.o(.text)
-    add_round_key                            0x00008a3d   Thumb Code    16  aes.o(.text)
-    shift_sub_rows                           0x00008a4d   Thumb Code   108  aes.o(.text)
-    mix_sub_columns                          0x00008ab9   Thumb Code   630  aes.o(.text)
-    .text                                    0x00008f14   Section        0  cmac.o(.text)
-    .text                                    0x000091ec   Section        0  utilities.o(.text)
-    .text                                    0x0000929c   Section        0  memseta.o(.text)
-    .text                                    0x000092c0   Section        0  dadd.o(.text)
-    .text                                    0x0000940e   Section        0  dmul.o(.text)
-    .text                                    0x000094f2   Section        0  ddiv.o(.text)
-    .text                                    0x000095d0   Section        0  fflti.o(.text)
-    .text                                    0x000095e2   Section        0  dflti.o(.text)
-    .text                                    0x00009604   Section        0  dfltui.o(.text)
-    .text                                    0x0000961e   Section        0  dfixi.o(.text)
-    .text                                    0x0000965c   Section        0  dfixui.o(.text)
-    .text                                    0x0000968e   Section        0  f2d.o(.text)
-    .text                                    0x000096b4   Section       48  cdrcmple.o(.text)
-    .text                                    0x000096e4   Section        0  d2f.o(.text)
-    .text                                    0x0000971c   Section        0  uidiv.o(.text)
-    .text                                    0x00009748   Section        0  uldiv.o(.text)
-    .text                                    0x000097aa   Section        0  llshl.o(.text)
-    .text                                    0x000097c8   Section        0  llushr.o(.text)
-    .text                                    0x000097e8   Section        0  llsshr.o(.text)
-    .text                                    0x0000980c   Section        0  iusefp.o(.text)
-    .text                                    0x0000980c   Section        0  fepilogue.o(.text)
-    .text                                    0x0000987a   Section        0  depilogue.o(.text)
-    .text                                    0x00009934   Section        0  drnd.o(.text)
-    .text                                    0x000099bc   Section        0  dfixul.o(.text)
-    .text                                    0x000099ec   Section       48  cdcmple.o(.text)
-    .text                                    0x00009a1c   Section       36  init.o(.text)
-    .text                                    0x00009a40   Section        0  __dczerorl2.o(.text)
-    i.__0printf                              0x00009a98   Section        0  printfa.o(i.__0printf)
-    i.__scatterload_copy                     0x00009ab8   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x00009ac6   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x00009ac8   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i._fp_digits                             0x00009ad8   Section        0  printfa.o(i._fp_digits)
-    _fp_digits                               0x00009ad9   Thumb Code   334  printfa.o(i._fp_digits)
-    i._printf_core                           0x00009c3c   Section        0  printfa.o(i._printf_core)
-    _printf_core                             0x00009c3d   Thumb Code  1744  printfa.o(i._printf_core)
-    i._printf_post_padding                   0x0000a318   Section        0  printfa.o(i._printf_post_padding)
-    _printf_post_padding                     0x0000a319   Thumb Code    36  printfa.o(i._printf_post_padding)
-    i._printf_pre_padding                    0x0000a33c   Section        0  printfa.o(i._printf_pre_padding)
-    _printf_pre_padding                      0x0000a33d   Thumb Code    46  printfa.o(i._printf_pre_padding)
-    i.ceil                                   0x0000a36c   Section        0  ceil.o(i.ceil)
-    i.floor                                  0x0000a448   Section        0  floor.o(i.floor)
-    i.round                                  0x0000a524   Section        0  round.o(i.round)
-    .constdata                               0x0000a5b8   Section       23  time.o(.constdata)
-    .constdata                               0x0000a5d0   Section       56  em_rmu.o(.constdata)
-    resetCauseMasks                          0x0000a5d0   Data          56  em_rmu.o(.constdata)
-    .constdata                               0x0000a608   Section       11  rtimer-arch.o(.constdata)
-    .constdata                               0x0000a614   Section       16  app_task.o(.constdata)
-    .constdata                               0x0000a624   Section       40  loramac.o(.constdata)
-    .constdata                               0x0000a64c   Section       84  sx1276_hal.o(.constdata)
-    .constdata                               0x0000a6a0   Section      224  sx1276.o(.constdata)
-    .constdata                               0x0000a780   Section      768  aes.o(.constdata)
-    sbox                                     0x0000a780   Data         256  aes.o(.constdata)
-    gfm2_sbox                                0x0000a880   Data         256  aes.o(.constdata)
-    gfm3_sbox                                0x0000a980   Data         256  aes.o(.constdata)
-    .conststring                             0x0000aa80   Section       12  etimer.o(.conststring)
-    .conststring                             0x0000aa8c   Section       15  ctimer.o(.conststring)
-    .conststring                             0x0000aa9c   Section       76  app_task.o(.conststring)
+    NVIC_EnableIRQ                           0x00006e51   Thumb Code    22  sx1276_hal.o(.text)
+    NVIC_DisableIRQ                          0x00006e67   Thumb Code    18  sx1276_hal.o(.text)
+    GPIO_PinInGet                            0x00006e79   Thumb Code    22  sx1276_hal.o(.text)
+    GPIO_PinOutClear                         0x00006e8f   Thumb Code    20  sx1276_hal.o(.text)
+    GPIO_PinOutSet                           0x00006ea3   Thumb Code    20  sx1276_hal.o(.text)
+    .text                                    0x00006f24   Section        0  sx1276.o(.text)
+    RxChainCalibration                       0x00007043   Thumb Code   174  sx1276.o(.text)
+    GetFskBandwidthRegValue                  0x00007305   Thumb Code    50  sx1276.o(.text)
+    .text                                    0x000088d0   Section        0  dht11.o(.text)
+    DHT11_Rst                                0x000088f1   Thumb Code    54  dht11.o(.text)
+    DHT11_Check                              0x00008927   Thumb Code    14  dht11.o(.text)
+    DHT11_Read_Bit                           0x00008935   Thumb Code    82  dht11.o(.text)
+    DHT11_Read_Byte                          0x00008987   Thumb Code    30  dht11.o(.text)
+    GPIO_PinInGet                            0x00008bbb   Thumb Code    22  dht11.o(.text)
+    GPIO_PinOutSet                           0x00008bd1   Thumb Code    20  dht11.o(.text)
+    .text                                    0x00008c48   Section        0  aes.o(.text)
+    copy_block                               0x00008c49   Thumb Code    66  aes.o(.text)
+    copy_block_nn                            0x00008c8b   Thumb Code    24  aes.o(.text)
+    xor_block                                0x00008ca3   Thumb Code   130  aes.o(.text)
+    copy_and_key                             0x00008d25   Thumb Code   132  aes.o(.text)
+    add_round_key                            0x00008da9   Thumb Code    16  aes.o(.text)
+    shift_sub_rows                           0x00008db9   Thumb Code   108  aes.o(.text)
+    mix_sub_columns                          0x00008e25   Thumb Code   630  aes.o(.text)
+    .text                                    0x00009280   Section        0  cmac.o(.text)
+    .text                                    0x00009558   Section        0  utilities.o(.text)
+    .text                                    0x00009608   Section        0  memcpya.o(.text)
+    .text                                    0x0000962c   Section        0  memseta.o(.text)
+    .text                                    0x00009650   Section        0  dadd.o(.text)
+    .text                                    0x0000979e   Section        0  dmul.o(.text)
+    .text                                    0x00009882   Section        0  ddiv.o(.text)
+    .text                                    0x00009960   Section        0  fflti.o(.text)
+    .text                                    0x00009972   Section        0  dflti.o(.text)
+    .text                                    0x00009994   Section        0  dfltui.o(.text)
+    .text                                    0x000099ae   Section        0  dfixi.o(.text)
+    .text                                    0x000099ec   Section        0  dfixui.o(.text)
+    .text                                    0x00009a1e   Section        0  f2d.o(.text)
+    .text                                    0x00009a44   Section       48  cdrcmple.o(.text)
+    .text                                    0x00009a74   Section        0  d2f.o(.text)
+    .text                                    0x00009aac   Section        0  uidiv.o(.text)
+    .text                                    0x00009ad8   Section        0  uldiv.o(.text)
+    .text                                    0x00009b3a   Section        0  llshl.o(.text)
+    .text                                    0x00009b58   Section        0  llushr.o(.text)
+    .text                                    0x00009b78   Section        0  llsshr.o(.text)
+    .text                                    0x00009b9c   Section        0  iusefp.o(.text)
+    .text                                    0x00009b9c   Section        0  fepilogue.o(.text)
+    .text                                    0x00009c0a   Section        0  depilogue.o(.text)
+    .text                                    0x00009cc4   Section        0  drnd.o(.text)
+    .text                                    0x00009d4c   Section        0  dfixul.o(.text)
+    .text                                    0x00009d7c   Section       48  cdcmple.o(.text)
+    .text                                    0x00009dac   Section       36  init.o(.text)
+    .text                                    0x00009dd0   Section        0  __dczerorl2.o(.text)
+    i.__0printf                              0x00009e28   Section        0  printfa.o(i.__0printf)
+    i.__scatterload_copy                     0x00009e48   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00009e56   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00009e58   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i._fp_digits                             0x00009e68   Section        0  printfa.o(i._fp_digits)
+    _fp_digits                               0x00009e69   Thumb Code   334  printfa.o(i._fp_digits)
+    i._printf_core                           0x00009fcc   Section        0  printfa.o(i._printf_core)
+    _printf_core                             0x00009fcd   Thumb Code  1744  printfa.o(i._printf_core)
+    i._printf_post_padding                   0x0000a6a8   Section        0  printfa.o(i._printf_post_padding)
+    _printf_post_padding                     0x0000a6a9   Thumb Code    36  printfa.o(i._printf_post_padding)
+    i._printf_pre_padding                    0x0000a6cc   Section        0  printfa.o(i._printf_pre_padding)
+    _printf_pre_padding                      0x0000a6cd   Thumb Code    46  printfa.o(i._printf_pre_padding)
+    i.ceil                                   0x0000a6fc   Section        0  ceil.o(i.ceil)
+    i.floor                                  0x0000a7d8   Section        0  floor.o(i.floor)
+    i.round                                  0x0000a8b4   Section        0  round.o(i.round)
+    .constdata                               0x0000a948   Section       23  time.o(.constdata)
+    .constdata                               0x0000a960   Section       56  em_rmu.o(.constdata)
+    resetCauseMasks                          0x0000a960   Data          56  em_rmu.o(.constdata)
+    .constdata                               0x0000a998   Section       11  rtimer-arch.o(.constdata)
+    .constdata                               0x0000a9a4   Section       16  app_task.o(.constdata)
+    .constdata                               0x0000a9b4   Section       40  loramac.o(.constdata)
+    .constdata                               0x0000a9dc   Section       84  sx1276_hal.o(.constdata)
+    .constdata                               0x0000aa30   Section      224  sx1276.o(.constdata)
+    .constdata                               0x0000ab10   Section      768  aes.o(.constdata)
+    sbox                                     0x0000ab10   Data         256  aes.o(.constdata)
+    gfm2_sbox                                0x0000ac10   Data         256  aes.o(.constdata)
+    gfm3_sbox                                0x0000ad10   Data         256  aes.o(.constdata)
+    .conststring                             0x0000ae10   Section       12  etimer.o(.conststring)
+    .conststring                             0x0000ae1c   Section       15  ctimer.o(.conststring)
+    .conststring                             0x0000ae2c   Section       76  app_task.o(.conststring)
     .data                                    0x20000000   Section       12  system_efm32g.o(.data)
     SystemHFXOClock                          0x20000000   Data           4  system_efm32g.o(.data)
     SystemLFXOClock                          0x20000004   Data           4  system_efm32g.o(.data)
@@ -991,46 +1012,51 @@ Image Symbol Table
     RadioIsActive                            0x20000278   Data           1  sx1276_hal.o(.data)
     .data                                    0x2000027c   Section        4  sx1276.o(.data)
     RadioEvents                              0x2000027c   Data           4  sx1276.o(.data)
-    .data                                    0x20000280   Section        4  utilities.o(.data)
-    next                                     0x20000280   Data           4  utilities.o(.data)
-    .data                                    0x20000284   Section        4  stdout.o(.data)
-    .bss                                     0x20000288   Section        8  sysdelay.o(.bss)
-    .bss                                     0x20000290   Section      384  process.o(.bss)
-    events                                   0x20000290   Data         384  process.o(.bss)
-    .bss                                     0x20000410   Section      204  app_task.o(.bss)
-    AppData                                  0x20000410   Data          64  app_task.o(.bss)
-    TxNextPacketTimer                        0x20000450   Data          36  app_task.o(.bss)
-    JoinReqTimer                             0x20000474   Data          36  app_task.o(.bss)
-    et                                       0x200004ac   Data          16  app_task.o(.bss)
-    et                                       0x200004bc   Data          16  app_task.o(.bss)
-    et                                       0x200004cc   Data          16  app_task.o(.bss)
-    .bss                                     0x200004dc   Section     1184  loramac.o(.bss)
-    LoRaMacNwkSKey                           0x200004dc   Data          16  loramac.o(.bss)
-    LoRaMacAppSKey                           0x200004ec   Data          16  loramac.o(.bss)
-    LoRaMacBuffer                            0x200004fc   Data         255  loramac.o(.bss)
-    LoRaMacPayload                           0x200005fb   Data         255  loramac.o(.bss)
-    LoRaMacRxPayload                         0x200006fa   Data         255  loramac.o(.bss)
-    MacCommandsBuffer                        0x200007f9   Data          15  loramac.o(.bss)
-    MacCommandsBufferToRepeat                0x20000808   Data          15  loramac.o(.bss)
-    MacStateCheckTimer                       0x20000878   Data          36  loramac.o(.bss)
-    RadioEvents                              0x2000089c   Data          28  loramac.o(.bss)
-    TxDelayedTimer                           0x200008b8   Data          36  loramac.o(.bss)
-    RxWindowTimer1                           0x200008dc   Data          36  loramac.o(.bss)
-    RxWindowTimer2                           0x20000900   Data          36  loramac.o(.bss)
-    AckTimeoutTimer                          0x20000924   Data          36  loramac.o(.bss)
-    McpsIndication                           0x20000948   Data          24  loramac.o(.bss)
-    McpsConfirm                              0x20000960   Data          16  loramac.o(.bss)
-    MlmeConfirm                              0x20000970   Data          12  loramac.o(.bss)
-    .bss                                     0x2000097c   Section       36  loramac-api-v3.o(.bss)
-    LoRaMacEventInfo                         0x2000097c   Data          24  loramac-api-v3.o(.bss)
-    LoRaMacPrimitives                        0x20000994   Data          12  loramac-api-v3.o(.bss)
-    .bss                                     0x200009a0   Section      556  loramaccrypto.o(.bss)
-    Mic                                      0x200009a0   Data          16  loramaccrypto.o(.bss)
-    sBlock                                   0x200009b0   Data          16  loramaccrypto.o(.bss)
-    AesContext                               0x200009c0   Data         241  loramaccrypto.o(.bss)
-    AesCmacCtx                               0x20000ab4   Data         280  loramaccrypto.o(.bss)
-    .bss                                     0x20000bcc   Section      456  sx1276.o(.bss)
-    STACK                                    0x20000d98   Section     1024  startup_efm32g.o(STACK)
+    .data                                    0x20000280   Section        7  dht11.o(.data)
+    AppDataSize                              0x20000280   Data           1  dht11.o(.data)
+    AppPort                                  0x20000281   Data           1  dht11.o(.data)
+    .data                                    0x20000288   Section        4  utilities.o(.data)
+    next                                     0x20000288   Data           4  utilities.o(.data)
+    .data                                    0x2000028c   Section        4  stdout.o(.data)
+    .bss                                     0x20000290   Section        8  sysdelay.o(.bss)
+    .bss                                     0x20000298   Section      384  process.o(.bss)
+    events                                   0x20000298   Data         384  process.o(.bss)
+    .bss                                     0x20000418   Section      204  app_task.o(.bss)
+    AppData                                  0x20000418   Data          64  app_task.o(.bss)
+    TxNextPacketTimer                        0x20000458   Data          36  app_task.o(.bss)
+    JoinReqTimer                             0x2000047c   Data          36  app_task.o(.bss)
+    et                                       0x200004b4   Data          16  app_task.o(.bss)
+    et                                       0x200004c4   Data          16  app_task.o(.bss)
+    et                                       0x200004d4   Data          16  app_task.o(.bss)
+    .bss                                     0x200004e4   Section     1184  loramac.o(.bss)
+    LoRaMacNwkSKey                           0x200004e4   Data          16  loramac.o(.bss)
+    LoRaMacAppSKey                           0x200004f4   Data          16  loramac.o(.bss)
+    LoRaMacBuffer                            0x20000504   Data         255  loramac.o(.bss)
+    LoRaMacPayload                           0x20000603   Data         255  loramac.o(.bss)
+    LoRaMacRxPayload                         0x20000702   Data         255  loramac.o(.bss)
+    MacCommandsBuffer                        0x20000801   Data          15  loramac.o(.bss)
+    MacCommandsBufferToRepeat                0x20000810   Data          15  loramac.o(.bss)
+    MacStateCheckTimer                       0x20000880   Data          36  loramac.o(.bss)
+    RadioEvents                              0x200008a4   Data          28  loramac.o(.bss)
+    TxDelayedTimer                           0x200008c0   Data          36  loramac.o(.bss)
+    RxWindowTimer1                           0x200008e4   Data          36  loramac.o(.bss)
+    RxWindowTimer2                           0x20000908   Data          36  loramac.o(.bss)
+    AckTimeoutTimer                          0x2000092c   Data          36  loramac.o(.bss)
+    McpsIndication                           0x20000950   Data          24  loramac.o(.bss)
+    McpsConfirm                              0x20000968   Data          16  loramac.o(.bss)
+    MlmeConfirm                              0x20000978   Data          12  loramac.o(.bss)
+    .bss                                     0x20000984   Section       36  loramac-api-v3.o(.bss)
+    LoRaMacEventInfo                         0x20000984   Data          24  loramac-api-v3.o(.bss)
+    LoRaMacPrimitives                        0x2000099c   Data          12  loramac-api-v3.o(.bss)
+    .bss                                     0x200009a8   Section      556  loramaccrypto.o(.bss)
+    Mic                                      0x200009a8   Data          16  loramaccrypto.o(.bss)
+    sBlock                                   0x200009b8   Data          16  loramaccrypto.o(.bss)
+    AesContext                               0x200009c8   Data         241  loramaccrypto.o(.bss)
+    AesCmacCtx                               0x20000abc   Data         280  loramaccrypto.o(.bss)
+    .bss                                     0x20000bd4   Section      456  sx1276.o(.bss)
+    .bss                                     0x20000d9c   Section       64  dht11.o(.bss)
+    AppData                                  0x20000d9c   Data          64  dht11.o(.bss)
+    STACK                                    0x20000de0   Section     1024  startup_efm32g.o(STACK)
 
     Global Symbols
 
@@ -1378,113 +1404,120 @@ Image Symbol Table
     SX1276ReadBuffer                         0x00006d09   Thumb Code    58  sx1276_hal.o(.text)
     GPIO_EVEN_IRQHandler                     0x00006d43   Thumb Code   148  sx1276_hal.o(.text)
     GPIO_ODD_IRQHandler                      0x00006dd7   Thumb Code   100  sx1276_hal.o(.text)
-    BoardGetUniqueId                         0x00006e3b   Thumb Code    34  sx1276_hal.o(.text)
-    SX1276Write                              0x00006f31   Thumb Code    16  sx1276.o(.text)
-    SX1276Read                               0x00006f41   Thumb Code    20  sx1276.o(.text)
-    SX1276SetOpMode                          0x00006f55   Thumb Code    62  sx1276.o(.text)
-    SX1276SetModem                           0x00006f93   Thumb Code   122  sx1276.o(.text)
-    SX1276SetChannel                         0x0000700d   Thumb Code    66  sx1276.o(.text)
-    SX1276OnTimeoutIrq                       0x000070fd   Thumb Code   184  sx1276.o(.text)
-    SX1276Init                               0x000071b5   Thumb Code   116  sx1276.o(.text)
-    SX1276GetStatus                          0x00007229   Thumb Code     6  sx1276.o(.text)
-    SX1276SetSleep                           0x0000722f   Thumb Code    28  sx1276.o(.text)
-    SX1276ReadRssi                           0x0000724b   Thumb Code    72  sx1276.o(.text)
-    SX1276IsChannelFree                      0x00007293   Thumb Code    62  sx1276.o(.text)
-    SX1276Random                             0x000072d1   Thumb Code    64  sx1276.o(.text)
-    SX1276SetRxConfig                        0x00007343   Thumb Code   760  sx1276.o(.text)
-    SX1276SetTxConfig                        0x0000763b   Thumb Code   800  sx1276.o(.text)
-    SX1276GetTimeOnAir                       0x0000795b   Thumb Code   616  sx1276.o(.text)
-    SX1276SetTx                              0x00007bc3   Thumb Code   224  sx1276.o(.text)
-    SX1276WriteFifo                          0x00007ca3   Thumb Code    18  sx1276.o(.text)
-    SX1276SetStby                            0x00007cb5   Thumb Code    28  sx1276.o(.text)
-    SX1276Send                               0x00007cd1   Thumb Code   284  sx1276.o(.text)
-    SX1276SetRx                              0x00007ded   Thumb Code   902  sx1276.o(.text)
-    SX1276StartCad                           0x00008173   Thumb Code    62  sx1276.o(.text)
-    SX1276ReadFifo                           0x000081b1   Thumb Code    18  sx1276.o(.text)
-    SX1276SetMaxPayloadLength                0x000081c3   Thumb Code    50  sx1276.o(.text)
-    SX1276OnDio0Irq                          0x000081f5   Thumb Code   874  sx1276.o(.text)
-    SX1276OnDio1Irq                          0x0000855f   Thumb Code   352  sx1276.o(.text)
-    SX1276OnDio2Irq                          0x000086bf   Thumb Code   300  sx1276.o(.text)
-    SX1276OnDio3Irq                          0x000087eb   Thumb Code   102  sx1276.o(.text)
-    SX1276OnDio4Irq                          0x00008851   Thumb Code    38  sx1276.o(.text)
-    SX1276OnDio5Irq                          0x00008877   Thumb Code   102  sx1276.o(.text)
-    aes_set_key                              0x00008d2f   Thumb Code   328  aes.o(.text)
-    aes_encrypt                              0x00008e77   Thumb Code    90  aes.o(.text)
-    aes_cbc_encrypt                          0x00008ed1   Thumb Code    68  aes.o(.text)
-    AES_CMAC_Init                            0x00008f15   Thumb Code    34  cmac.o(.text)
-    AES_CMAC_SetKey                          0x00008f37   Thumb Code    18  cmac.o(.text)
-    AES_CMAC_Update                          0x00008f49   Thumb Code   232  cmac.o(.text)
-    AES_CMAC_Final                           0x00009031   Thumb Code   442  cmac.o(.text)
-    rand1                                    0x000091ed   Thumb Code    32  utilities.o(.text)
-    srand1                                   0x0000920d   Thumb Code     6  utilities.o(.text)
-    randr                                    0x00009213   Thumb Code    26  utilities.o(.text)
-    memcpy1                                  0x0000922d   Thumb Code    24  utilities.o(.text)
-    memcpyr                                  0x00009245   Thumb Code    28  utilities.o(.text)
-    memset1                                  0x00009261   Thumb Code    20  utilities.o(.text)
-    Nibble2HexChar                           0x00009275   Thumb Code    30  utilities.o(.text)
-    __aeabi_memset                           0x0000929d   Thumb Code    14  memseta.o(.text)
-    __aeabi_memset4                          0x0000929d   Thumb Code     0  memseta.o(.text)
-    __aeabi_memset8                          0x0000929d   Thumb Code     0  memseta.o(.text)
-    __aeabi_memclr                           0x000092ab   Thumb Code     4  memseta.o(.text)
-    __aeabi_memclr4                          0x000092ab   Thumb Code     0  memseta.o(.text)
-    __aeabi_memclr8                          0x000092ab   Thumb Code     0  memseta.o(.text)
-    _memset$wrapper                          0x000092af   Thumb Code    18  memseta.o(.text)
-    __aeabi_dadd                             0x000092c1   Thumb Code   322  dadd.o(.text)
-    __aeabi_dsub                             0x00009403   Thumb Code     6  dadd.o(.text)
-    __aeabi_drsub                            0x00009409   Thumb Code     6  dadd.o(.text)
-    __aeabi_dmul                             0x0000940f   Thumb Code   228  dmul.o(.text)
-    __aeabi_ddiv                             0x000094f3   Thumb Code   222  ddiv.o(.text)
-    __aeabi_i2f                              0x000095d1   Thumb Code    18  fflti.o(.text)
-    __aeabi_i2d                              0x000095e3   Thumb Code    34  dflti.o(.text)
-    __aeabi_ui2d                             0x00009605   Thumb Code    26  dfltui.o(.text)
-    __aeabi_d2iz                             0x0000961f   Thumb Code    62  dfixi.o(.text)
-    __aeabi_d2uiz                            0x0000965d   Thumb Code    50  dfixui.o(.text)
-    __aeabi_f2d                              0x0000968f   Thumb Code    38  f2d.o(.text)
-    __aeabi_cdrcmple                         0x000096b5   Thumb Code    48  cdrcmple.o(.text)
-    __aeabi_d2f                              0x000096e5   Thumb Code    56  d2f.o(.text)
-    __aeabi_uidiv                            0x0000971d   Thumb Code     0  uidiv.o(.text)
-    __aeabi_uidivmod                         0x0000971d   Thumb Code    44  uidiv.o(.text)
-    __aeabi_uldivmod                         0x00009749   Thumb Code    98  uldiv.o(.text)
-    __aeabi_llsl                             0x000097ab   Thumb Code    30  llshl.o(.text)
-    _ll_shift_l                              0x000097ab   Thumb Code     0  llshl.o(.text)
-    __aeabi_llsr                             0x000097c9   Thumb Code    32  llushr.o(.text)
-    _ll_ushift_r                             0x000097c9   Thumb Code     0  llushr.o(.text)
-    __aeabi_lasr                             0x000097e9   Thumb Code    36  llsshr.o(.text)
-    _ll_sshift_r                             0x000097e9   Thumb Code     0  llsshr.o(.text)
-    __I$use$fp                               0x0000980d   Thumb Code     0  iusefp.o(.text)
-    _float_round                             0x0000980d   Thumb Code    18  fepilogue.o(.text)
-    _float_epilogue                          0x0000981f   Thumb Code    92  fepilogue.o(.text)
-    _double_round                            0x0000987b   Thumb Code    30  depilogue.o(.text)
-    _double_epilogue                         0x00009899   Thumb Code   156  depilogue.o(.text)
-    _drnd                                    0x00009935   Thumb Code   132  drnd.o(.text)
-    __aeabi_d2ulz                            0x000099bd   Thumb Code    48  dfixul.o(.text)
-    __aeabi_cdcmpeq                          0x000099ed   Thumb Code     0  cdcmple.o(.text)
-    __aeabi_cdcmple                          0x000099ed   Thumb Code    48  cdcmple.o(.text)
-    __scatterload                            0x00009a1d   Thumb Code    28  init.o(.text)
-    __scatterload_rt2                        0x00009a1d   Thumb Code     0  init.o(.text)
-    __decompress                             0x00009a41   Thumb Code     0  __dczerorl2.o(.text)
-    __decompress1                            0x00009a41   Thumb Code    86  __dczerorl2.o(.text)
-    __0printf                                0x00009a99   Thumb Code    22  printfa.o(i.__0printf)
-    __1printf                                0x00009a99   Thumb Code     0  printfa.o(i.__0printf)
-    __2printf                                0x00009a99   Thumb Code     0  printfa.o(i.__0printf)
-    __c89printf                              0x00009a99   Thumb Code     0  printfa.o(i.__0printf)
-    printf                                   0x00009a99   Thumb Code     0  printfa.o(i.__0printf)
-    __scatterload_copy                       0x00009ab9   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x00009ac7   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x00009ac9   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    ceil                                     0x0000a36d   Thumb Code   204  ceil.o(i.ceil)
-    floor                                    0x0000a449   Thumb Code   204  floor.o(i.floor)
-    round                                    0x0000a525   Thumb Code   136  round.o(i.round)
-    autostart_processes                      0x0000a614   Data          16  app_task.o(.constdata)
-    Datarates                                0x0000a624   Data           8  loramac.o(.constdata)
-    MaxPayloadOfDatarate                     0x0000a62c   Data           8  loramac.o(.constdata)
-    MaxPayloadOfDatarateRepeater             0x0000a634   Data           8  loramac.o(.constdata)
-    TxPowers                                 0x0000a63c   Data           6  loramac.o(.constdata)
-    Radio                                    0x0000a64c   Data          84  sx1276_hal.o(.constdata)
-    RadioRegsInit                            0x0000a6a0   Data          48  sx1276.o(.constdata)
-    FskBandwidths                            0x0000a6d0   Data         176  sx1276.o(.constdata)
-    Region$$Table$$Base                      0x0000aae8   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0000ab08   Number         0  anon$$obj.o(Region$$Table)
+    BoardGetUniqueId                         0x00006e3b   Thumb Code    22  sx1276_hal.o(.text)
+    SX1276Write                              0x00006f25   Thumb Code    16  sx1276.o(.text)
+    SX1276Read                               0x00006f35   Thumb Code    20  sx1276.o(.text)
+    SX1276SetOpMode                          0x00006f49   Thumb Code    62  sx1276.o(.text)
+    SX1276SetModem                           0x00006f87   Thumb Code   122  sx1276.o(.text)
+    SX1276SetChannel                         0x00007001   Thumb Code    66  sx1276.o(.text)
+    SX1276OnTimeoutIrq                       0x000070f1   Thumb Code   184  sx1276.o(.text)
+    SX1276Init                               0x000071a9   Thumb Code   116  sx1276.o(.text)
+    SX1276GetStatus                          0x0000721d   Thumb Code     6  sx1276.o(.text)
+    SX1276SetSleep                           0x00007223   Thumb Code    28  sx1276.o(.text)
+    SX1276ReadRssi                           0x0000723f   Thumb Code    72  sx1276.o(.text)
+    SX1276IsChannelFree                      0x00007287   Thumb Code    62  sx1276.o(.text)
+    SX1276Random                             0x000072c5   Thumb Code    64  sx1276.o(.text)
+    SX1276SetRxConfig                        0x00007337   Thumb Code   760  sx1276.o(.text)
+    SX1276SetTxConfig                        0x0000762f   Thumb Code   800  sx1276.o(.text)
+    SX1276GetTimeOnAir                       0x0000794f   Thumb Code   616  sx1276.o(.text)
+    SX1276SetTx                              0x00007bb7   Thumb Code   224  sx1276.o(.text)
+    SX1276WriteFifo                          0x00007c97   Thumb Code    18  sx1276.o(.text)
+    SX1276SetStby                            0x00007ca9   Thumb Code    28  sx1276.o(.text)
+    SX1276Send                               0x00007cc5   Thumb Code   284  sx1276.o(.text)
+    SX1276SetRx                              0x00007de1   Thumb Code   902  sx1276.o(.text)
+    SX1276StartCad                           0x00008167   Thumb Code    62  sx1276.o(.text)
+    SX1276ReadFifo                           0x000081a5   Thumb Code    18  sx1276.o(.text)
+    SX1276SetMaxPayloadLength                0x000081b7   Thumb Code    50  sx1276.o(.text)
+    SX1276OnDio0Irq                          0x000081e9   Thumb Code   874  sx1276.o(.text)
+    SX1276OnDio1Irq                          0x00008553   Thumb Code   352  sx1276.o(.text)
+    SX1276OnDio2Irq                          0x000086b3   Thumb Code   300  sx1276.o(.text)
+    SX1276OnDio3Irq                          0x000087df   Thumb Code   102  sx1276.o(.text)
+    SX1276OnDio4Irq                          0x00008845   Thumb Code    38  sx1276.o(.text)
+    SX1276OnDio5Irq                          0x0000886b   Thumb Code   102  sx1276.o(.text)
+    DHT_IOInput                              0x000088d1   Thumb Code    16  dht11.o(.text)
+    DHT_IOPushPull                           0x000088e1   Thumb Code    16  dht11.o(.text)
+    DHT11_Read_Data                          0x000089a5   Thumb Code   398  dht11.o(.text)
+    TxDHTFrame                               0x00008b33   Thumb Code   136  dht11.o(.text)
+    aes_set_key                              0x0000909b   Thumb Code   328  aes.o(.text)
+    aes_encrypt                              0x000091e3   Thumb Code    90  aes.o(.text)
+    aes_cbc_encrypt                          0x0000923d   Thumb Code    68  aes.o(.text)
+    AES_CMAC_Init                            0x00009281   Thumb Code    34  cmac.o(.text)
+    AES_CMAC_SetKey                          0x000092a3   Thumb Code    18  cmac.o(.text)
+    AES_CMAC_Update                          0x000092b5   Thumb Code   232  cmac.o(.text)
+    AES_CMAC_Final                           0x0000939d   Thumb Code   442  cmac.o(.text)
+    rand1                                    0x00009559   Thumb Code    32  utilities.o(.text)
+    srand1                                   0x00009579   Thumb Code     6  utilities.o(.text)
+    randr                                    0x0000957f   Thumb Code    26  utilities.o(.text)
+    memcpy1                                  0x00009599   Thumb Code    24  utilities.o(.text)
+    memcpyr                                  0x000095b1   Thumb Code    28  utilities.o(.text)
+    memset1                                  0x000095cd   Thumb Code    20  utilities.o(.text)
+    Nibble2HexChar                           0x000095e1   Thumb Code    30  utilities.o(.text)
+    __aeabi_memcpy                           0x00009609   Thumb Code    36  memcpya.o(.text)
+    __aeabi_memcpy4                          0x00009609   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memcpy8                          0x00009609   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memset                           0x0000962d   Thumb Code    14  memseta.o(.text)
+    __aeabi_memset4                          0x0000962d   Thumb Code     0  memseta.o(.text)
+    __aeabi_memset8                          0x0000962d   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr                           0x0000963b   Thumb Code     4  memseta.o(.text)
+    __aeabi_memclr4                          0x0000963b   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr8                          0x0000963b   Thumb Code     0  memseta.o(.text)
+    _memset$wrapper                          0x0000963f   Thumb Code    18  memseta.o(.text)
+    __aeabi_dadd                             0x00009651   Thumb Code   322  dadd.o(.text)
+    __aeabi_dsub                             0x00009793   Thumb Code     6  dadd.o(.text)
+    __aeabi_drsub                            0x00009799   Thumb Code     6  dadd.o(.text)
+    __aeabi_dmul                             0x0000979f   Thumb Code   228  dmul.o(.text)
+    __aeabi_ddiv                             0x00009883   Thumb Code   222  ddiv.o(.text)
+    __aeabi_i2f                              0x00009961   Thumb Code    18  fflti.o(.text)
+    __aeabi_i2d                              0x00009973   Thumb Code    34  dflti.o(.text)
+    __aeabi_ui2d                             0x00009995   Thumb Code    26  dfltui.o(.text)
+    __aeabi_d2iz                             0x000099af   Thumb Code    62  dfixi.o(.text)
+    __aeabi_d2uiz                            0x000099ed   Thumb Code    50  dfixui.o(.text)
+    __aeabi_f2d                              0x00009a1f   Thumb Code    38  f2d.o(.text)
+    __aeabi_cdrcmple                         0x00009a45   Thumb Code    48  cdrcmple.o(.text)
+    __aeabi_d2f                              0x00009a75   Thumb Code    56  d2f.o(.text)
+    __aeabi_uidiv                            0x00009aad   Thumb Code     0  uidiv.o(.text)
+    __aeabi_uidivmod                         0x00009aad   Thumb Code    44  uidiv.o(.text)
+    __aeabi_uldivmod                         0x00009ad9   Thumb Code    98  uldiv.o(.text)
+    __aeabi_llsl                             0x00009b3b   Thumb Code    30  llshl.o(.text)
+    _ll_shift_l                              0x00009b3b   Thumb Code     0  llshl.o(.text)
+    __aeabi_llsr                             0x00009b59   Thumb Code    32  llushr.o(.text)
+    _ll_ushift_r                             0x00009b59   Thumb Code     0  llushr.o(.text)
+    __aeabi_lasr                             0x00009b79   Thumb Code    36  llsshr.o(.text)
+    _ll_sshift_r                             0x00009b79   Thumb Code     0  llsshr.o(.text)
+    __I$use$fp                               0x00009b9d   Thumb Code     0  iusefp.o(.text)
+    _float_round                             0x00009b9d   Thumb Code    18  fepilogue.o(.text)
+    _float_epilogue                          0x00009baf   Thumb Code    92  fepilogue.o(.text)
+    _double_round                            0x00009c0b   Thumb Code    30  depilogue.o(.text)
+    _double_epilogue                         0x00009c29   Thumb Code   156  depilogue.o(.text)
+    _drnd                                    0x00009cc5   Thumb Code   132  drnd.o(.text)
+    __aeabi_d2ulz                            0x00009d4d   Thumb Code    48  dfixul.o(.text)
+    __aeabi_cdcmpeq                          0x00009d7d   Thumb Code     0  cdcmple.o(.text)
+    __aeabi_cdcmple                          0x00009d7d   Thumb Code    48  cdcmple.o(.text)
+    __scatterload                            0x00009dad   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x00009dad   Thumb Code     0  init.o(.text)
+    __decompress                             0x00009dd1   Thumb Code     0  __dczerorl2.o(.text)
+    __decompress1                            0x00009dd1   Thumb Code    86  __dczerorl2.o(.text)
+    __0printf                                0x00009e29   Thumb Code    22  printfa.o(i.__0printf)
+    __1printf                                0x00009e29   Thumb Code     0  printfa.o(i.__0printf)
+    __2printf                                0x00009e29   Thumb Code     0  printfa.o(i.__0printf)
+    __c89printf                              0x00009e29   Thumb Code     0  printfa.o(i.__0printf)
+    printf                                   0x00009e29   Thumb Code     0  printfa.o(i.__0printf)
+    __scatterload_copy                       0x00009e49   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00009e57   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00009e59   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    ceil                                     0x0000a6fd   Thumb Code   204  ceil.o(i.ceil)
+    floor                                    0x0000a7d9   Thumb Code   204  floor.o(i.floor)
+    round                                    0x0000a8b5   Thumb Code   136  round.o(i.round)
+    autostart_processes                      0x0000a9a4   Data          16  app_task.o(.constdata)
+    Datarates                                0x0000a9b4   Data           8  loramac.o(.constdata)
+    MaxPayloadOfDatarate                     0x0000a9bc   Data           8  loramac.o(.constdata)
+    MaxPayloadOfDatarateRepeater             0x0000a9c4   Data           8  loramac.o(.constdata)
+    TxPowers                                 0x0000a9cc   Data           6  loramac.o(.constdata)
+    Radio                                    0x0000a9dc   Data          84  sx1276_hal.o(.constdata)
+    RadioRegsInit                            0x0000aa30   Data          48  sx1276.o(.constdata)
+    FskBandwidths                            0x0000aa60   Data         176  sx1276.o(.constdata)
+    Region$$Table$$Base                      0x0000ae78   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0000ae98   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000008   Data           4  system_efm32g.o(.data)
     idle_count                               0x2000000c   Data           4  main.o(.data)
     Sleep_Flag                               0x20000010   Data           1  main.o(.data)
@@ -1510,18 +1543,19 @@ Image Symbol Table
     LoRaMacState                             0x20000228   Data           4  loramac.o(.data)
     TxTimeOnAir                              0x20000240   Data           4  loramac.o(.data)
     LoRaMacFlags                             0x20000247   Data           1  loramac.o(.data)
-    __stdout                                 0x20000284   Data           4  stdout.o(.data)
-    usDelay                                  0x20000288   Data           4  sysdelay.o(.bss)
-    msDelay                                  0x2000028c   Data           4  sysdelay.o(.bss)
-    ComplianceTest                           0x20000498   Data          20  app_task.o(.bss)
-    LoRaMacParams                            0x20000818   Data          48  loramac.o(.bss)
-    LoRaMacParamsDefaults                    0x20000848   Data          48  loramac.o(.bss)
-    RxTxBuffer                               0x20000bcc   Data         256  sx1276.o(.bss)
-    SX1276                                   0x20000ccc   Data          92  sx1276.o(.bss)
-    TxTimeoutTimer                           0x20000d28   Data          36  sx1276.o(.bss)
-    RxTimeoutTimer                           0x20000d4c   Data          36  sx1276.o(.bss)
-    RxTimeoutSyncWord                        0x20000d70   Data          36  sx1276.o(.bss)
-    __initial_sp                             0x20001198   Data           0  startup_efm32g.o(STACK)
+    Data_Buf                                 0x20000282   Data           5  dht11.o(.data)
+    __stdout                                 0x2000028c   Data           4  stdout.o(.data)
+    usDelay                                  0x20000290   Data           4  sysdelay.o(.bss)
+    msDelay                                  0x20000294   Data           4  sysdelay.o(.bss)
+    ComplianceTest                           0x200004a0   Data          20  app_task.o(.bss)
+    LoRaMacParams                            0x20000820   Data          48  loramac.o(.bss)
+    LoRaMacParamsDefaults                    0x20000850   Data          48  loramac.o(.bss)
+    RxTxBuffer                               0x20000bd4   Data         256  sx1276.o(.bss)
+    SX1276                                   0x20000cd4   Data          92  sx1276.o(.bss)
+    TxTimeoutTimer                           0x20000d30   Data          36  sx1276.o(.bss)
+    RxTimeoutTimer                           0x20000d54   Data          36  sx1276.o(.bss)
+    RxTimeoutSyncWord                        0x20000d78   Data          36  sx1276.o(.bss)
+    __initial_sp                             0x200011e0   Data           0  startup_efm32g.o(STACK)
 
 
 
@@ -1531,22 +1565,22 @@ Memory Map of the image
 
   Image Entry point : 0x000000b9
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x0000ad90, Max: 0x00020000, ABSOLUTE, COMPRESSED[0x0000ab98])
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x0000b128, Max: 0x00020000, ABSOLUTE, COMPRESSED[0x0000af2c])
 
-    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x0000ab08, Max: 0x00020000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x0000ae98, Max: 0x00020000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x00000000   0x000000b8   Data   RO          133    RESET               startup_efm32g.o
-    0x000000b8   0x00000000   Code   RO         1320  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x000000b8   0x00000004   Code   RO         1608    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x000000bc   0x00000004   Code   RO         1611    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x000000c0   0x00000000   Code   RO         1613    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x000000c0   0x00000000   Code   RO         1615    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x000000c0   0x00000008   Code   RO         1616    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x000000c8   0x00000000   Code   RO         1618    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x000000c8   0x00000000   Code   RO         1620    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x000000c8   0x00000004   Code   RO         1609    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x000000b8   0x00000000   Code   RO         1360  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x000000b8   0x00000004   Code   RO         1652    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x000000bc   0x00000004   Code   RO         1655    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x000000c0   0x00000000   Code   RO         1657    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x000000c0   0x00000000   Code   RO         1659    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x000000c0   0x00000008   Code   RO         1660    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x000000c8   0x00000000   Code   RO         1662    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x000000c8   0x00000000   Code   RO         1664    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x000000c8   0x00000004   Code   RO         1653    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x000000cc   0x00000134   Code   RO            3    .text               system_efm32g.o
     0x00000200   0x00000024   Code   RO          134    .text               startup_efm32g.o
     0x00000224   0x000001b0   Code   RO          140    .text               main.o
@@ -1581,72 +1615,74 @@ Memory Map of the image
     0x000028e0   0x00000168   Code   RO         1042    .text               rtimer-arch.o
     0x00002a48   0x00000114   Code   RO         1071    .text               list.o
     0x00002b5c   0x00000744   Code   RO         1085    .text               app_task.o
-    0x000032a0   0x00002f7c   Code   RO         1133    .text               loramac.o
-    0x0000621c   0x00000610   Code   RO         1156    .text               loramac-api-v3.o
-    0x0000682c   0x000002b8   Code   RO         1174    .text               loramaccrypto.o
-    0x00006ae4   0x0000044c   Code   RO         1197    .text               sx1276_hal.o
-    0x00006f30   0x000019ac   Code   RO         1237    .text               sx1276.o
-    0x000088dc   0x00000638   Code   RO         1270    .text               aes.o
-    0x00008f14   0x000002d6   Code   RO         1284    .text               cmac.o
-    0x000091ea   0x00000002   PAD
-    0x000091ec   0x000000b0   Code   RO         1296    .text               utilities.o
-    0x0000929c   0x00000024   Code   RO         1323    .text               mc_w.l(memseta.o)
-    0x000092c0   0x0000014e   Code   RO         1586    .text               mf_w.l(dadd.o)
-    0x0000940e   0x000000e4   Code   RO         1588    .text               mf_w.l(dmul.o)
-    0x000094f2   0x000000de   Code   RO         1590    .text               mf_w.l(ddiv.o)
-    0x000095d0   0x00000012   Code   RO         1592    .text               mf_w.l(fflti.o)
-    0x000095e2   0x00000022   Code   RO         1594    .text               mf_w.l(dflti.o)
-    0x00009604   0x0000001a   Code   RO         1596    .text               mf_w.l(dfltui.o)
-    0x0000961e   0x0000003e   Code   RO         1598    .text               mf_w.l(dfixi.o)
-    0x0000965c   0x00000032   Code   RO         1600    .text               mf_w.l(dfixui.o)
-    0x0000968e   0x00000026   Code   RO         1602    .text               mf_w.l(f2d.o)
-    0x000096b4   0x00000030   Code   RO         1604    .text               mf_w.l(cdrcmple.o)
-    0x000096e4   0x00000038   Code   RO         1606    .text               mf_w.l(d2f.o)
-    0x0000971c   0x0000002c   Code   RO         1623    .text               mc_w.l(uidiv.o)
-    0x00009748   0x00000062   Code   RO         1625    .text               mc_w.l(uldiv.o)
-    0x000097aa   0x0000001e   Code   RO         1627    .text               mc_w.l(llshl.o)
-    0x000097c8   0x00000020   Code   RO         1629    .text               mc_w.l(llushr.o)
-    0x000097e8   0x00000024   Code   RO         1631    .text               mc_w.l(llsshr.o)
-    0x0000980c   0x00000000   Code   RO         1633    .text               mc_w.l(iusefp.o)
-    0x0000980c   0x0000006e   Code   RO         1634    .text               mf_w.l(fepilogue.o)
-    0x0000987a   0x000000ba   Code   RO         1636    .text               mf_w.l(depilogue.o)
-    0x00009934   0x00000088   Code   RO         1638    .text               mf_w.l(drnd.o)
-    0x000099bc   0x00000030   Code   RO         1640    .text               mf_w.l(dfixul.o)
-    0x000099ec   0x00000030   Code   RO         1642    .text               mf_w.l(cdcmple.o)
-    0x00009a1c   0x00000024   Code   RO         1644    .text               mc_w.l(init.o)
-    0x00009a40   0x00000056   Code   RO         1654    .text               mc_w.l(__dczerorl2.o)
-    0x00009a96   0x00000002   PAD
-    0x00009a98   0x00000020   Code   RO         1558    i.__0printf         mc_w.l(printfa.o)
-    0x00009ab8   0x0000000e   Code   RO         1648    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x00009ac6   0x00000002   Code   RO         1649    i.__scatterload_null  mc_w.l(handlers.o)
-    0x00009ac8   0x0000000e   Code   RO         1650    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x00009ad6   0x00000002   PAD
-    0x00009ad8   0x00000164   Code   RO         1565    i._fp_digits        mc_w.l(printfa.o)
-    0x00009c3c   0x000006dc   Code   RO         1566    i._printf_core      mc_w.l(printfa.o)
-    0x0000a318   0x00000024   Code   RO         1567    i._printf_post_padding  mc_w.l(printfa.o)
-    0x0000a33c   0x0000002e   Code   RO         1568    i._printf_pre_padding  mc_w.l(printfa.o)
-    0x0000a36a   0x00000002   PAD
-    0x0000a36c   0x000000dc   Code   RO         1311    i.ceil              m_ws.l(ceil.o)
-    0x0000a448   0x000000dc   Code   RO         1315    i.floor             m_ws.l(floor.o)
-    0x0000a524   0x00000094   Code   RO         1318    i.round             m_ws.l(round.o)
-    0x0000a5b8   0x00000017   Data   RO          476    .constdata          time.o
-    0x0000a5cf   0x00000001   PAD
-    0x0000a5d0   0x00000038   Data   RO          851    .constdata          em_rmu.o
-    0x0000a608   0x0000000b   Data   RO         1043    .constdata          rtimer-arch.o
-    0x0000a613   0x00000001   PAD
-    0x0000a614   0x00000010   Data   RO         1087    .constdata          app_task.o
-    0x0000a624   0x00000028   Data   RO         1135    .constdata          loramac.o
-    0x0000a64c   0x00000054   Data   RO         1198    .constdata          sx1276_hal.o
-    0x0000a6a0   0x000000e0   Data   RO         1239    .constdata          sx1276.o
-    0x0000a780   0x00000300   Data   RO         1271    .constdata          aes.o
-    0x0000aa80   0x0000000c   Data   RO          940    .conststring        etimer.o
-    0x0000aa8c   0x0000000f   Data   RO         1007    .conststring        ctimer.o
-    0x0000aa9b   0x00000001   PAD
-    0x0000aa9c   0x0000004c   Data   RO         1088    .conststring        app_task.o
-    0x0000aae8   0x00000020   Data   RO         1646    Region$$Table       anon$$obj.o
+    0x000032a0   0x00002f7c   Code   RO         1143    .text               loramac.o
+    0x0000621c   0x00000610   Code   RO         1166    .text               loramac-api-v3.o
+    0x0000682c   0x000002b8   Code   RO         1184    .text               loramaccrypto.o
+    0x00006ae4   0x00000440   Code   RO         1207    .text               sx1276_hal.o
+    0x00006f24   0x000019ac   Code   RO         1247    .text               sx1276.o
+    0x000088d0   0x00000378   Code   RO         1275    .text               dht11.o
+    0x00008c48   0x00000638   Code   RO         1310    .text               aes.o
+    0x00009280   0x000002d6   Code   RO         1324    .text               cmac.o
+    0x00009556   0x00000002   PAD
+    0x00009558   0x000000b0   Code   RO         1336    .text               utilities.o
+    0x00009608   0x00000024   Code   RO         1363    .text               mc_w.l(memcpya.o)
+    0x0000962c   0x00000024   Code   RO         1365    .text               mc_w.l(memseta.o)
+    0x00009650   0x0000014e   Code   RO         1630    .text               mf_w.l(dadd.o)
+    0x0000979e   0x000000e4   Code   RO         1632    .text               mf_w.l(dmul.o)
+    0x00009882   0x000000de   Code   RO         1634    .text               mf_w.l(ddiv.o)
+    0x00009960   0x00000012   Code   RO         1636    .text               mf_w.l(fflti.o)
+    0x00009972   0x00000022   Code   RO         1638    .text               mf_w.l(dflti.o)
+    0x00009994   0x0000001a   Code   RO         1640    .text               mf_w.l(dfltui.o)
+    0x000099ae   0x0000003e   Code   RO         1642    .text               mf_w.l(dfixi.o)
+    0x000099ec   0x00000032   Code   RO         1644    .text               mf_w.l(dfixui.o)
+    0x00009a1e   0x00000026   Code   RO         1646    .text               mf_w.l(f2d.o)
+    0x00009a44   0x00000030   Code   RO         1648    .text               mf_w.l(cdrcmple.o)
+    0x00009a74   0x00000038   Code   RO         1650    .text               mf_w.l(d2f.o)
+    0x00009aac   0x0000002c   Code   RO         1667    .text               mc_w.l(uidiv.o)
+    0x00009ad8   0x00000062   Code   RO         1669    .text               mc_w.l(uldiv.o)
+    0x00009b3a   0x0000001e   Code   RO         1671    .text               mc_w.l(llshl.o)
+    0x00009b58   0x00000020   Code   RO         1673    .text               mc_w.l(llushr.o)
+    0x00009b78   0x00000024   Code   RO         1675    .text               mc_w.l(llsshr.o)
+    0x00009b9c   0x00000000   Code   RO         1677    .text               mc_w.l(iusefp.o)
+    0x00009b9c   0x0000006e   Code   RO         1678    .text               mf_w.l(fepilogue.o)
+    0x00009c0a   0x000000ba   Code   RO         1680    .text               mf_w.l(depilogue.o)
+    0x00009cc4   0x00000088   Code   RO         1682    .text               mf_w.l(drnd.o)
+    0x00009d4c   0x00000030   Code   RO         1684    .text               mf_w.l(dfixul.o)
+    0x00009d7c   0x00000030   Code   RO         1686    .text               mf_w.l(cdcmple.o)
+    0x00009dac   0x00000024   Code   RO         1688    .text               mc_w.l(init.o)
+    0x00009dd0   0x00000056   Code   RO         1698    .text               mc_w.l(__dczerorl2.o)
+    0x00009e26   0x00000002   PAD
+    0x00009e28   0x00000020   Code   RO         1602    i.__0printf         mc_w.l(printfa.o)
+    0x00009e48   0x0000000e   Code   RO         1692    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00009e56   0x00000002   Code   RO         1693    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00009e58   0x0000000e   Code   RO         1694    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00009e66   0x00000002   PAD
+    0x00009e68   0x00000164   Code   RO         1609    i._fp_digits        mc_w.l(printfa.o)
+    0x00009fcc   0x000006dc   Code   RO         1610    i._printf_core      mc_w.l(printfa.o)
+    0x0000a6a8   0x00000024   Code   RO         1611    i._printf_post_padding  mc_w.l(printfa.o)
+    0x0000a6cc   0x0000002e   Code   RO         1612    i._printf_pre_padding  mc_w.l(printfa.o)
+    0x0000a6fa   0x00000002   PAD
+    0x0000a6fc   0x000000dc   Code   RO         1351    i.ceil              m_ws.l(ceil.o)
+    0x0000a7d8   0x000000dc   Code   RO         1355    i.floor             m_ws.l(floor.o)
+    0x0000a8b4   0x00000094   Code   RO         1358    i.round             m_ws.l(round.o)
+    0x0000a948   0x00000017   Data   RO          476    .constdata          time.o
+    0x0000a95f   0x00000001   PAD
+    0x0000a960   0x00000038   Data   RO          851    .constdata          em_rmu.o
+    0x0000a998   0x0000000b   Data   RO         1043    .constdata          rtimer-arch.o
+    0x0000a9a3   0x00000001   PAD
+    0x0000a9a4   0x00000010   Data   RO         1087    .constdata          app_task.o
+    0x0000a9b4   0x00000028   Data   RO         1145    .constdata          loramac.o
+    0x0000a9dc   0x00000054   Data   RO         1208    .constdata          sx1276_hal.o
+    0x0000aa30   0x000000e0   Data   RO         1249    .constdata          sx1276.o
+    0x0000ab10   0x00000300   Data   RO         1311    .constdata          aes.o
+    0x0000ae10   0x0000000c   Data   RO          940    .conststring        etimer.o
+    0x0000ae1c   0x0000000f   Data   RO         1007    .conststring        ctimer.o
+    0x0000ae2b   0x00000001   PAD
+    0x0000ae2c   0x0000004c   Data   RO         1088    .conststring        app_task.o
+    0x0000ae78   0x00000020   Data   RO         1690    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00001198, Max: 0x00004000, ABSOLUTE, COMPRESSED[0x00000090])
+    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x000011e0, Max: 0x00004000, ABSOLUTE, COMPRESSED[0x00000094])
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1668,23 +1704,26 @@ Memory Map of the image
     0x200000be   0x00000002   PAD
     0x200000c0   0x0000008e   Data   RW         1089    .data               app_task.o
     0x2000014e   0x00000002   PAD
-    0x20000150   0x000000f8   Data   RW         1136    .data               loramac.o
-    0x20000248   0x00000010   Data   RW         1158    .data               loramac-api-v3.o
-    0x20000258   0x00000020   Data   RW         1176    .data               loramaccrypto.o
-    0x20000278   0x00000001   Data   RW         1199    .data               sx1276_hal.o
+    0x20000150   0x000000f8   Data   RW         1146    .data               loramac.o
+    0x20000248   0x00000010   Data   RW         1168    .data               loramac-api-v3.o
+    0x20000258   0x00000020   Data   RW         1186    .data               loramaccrypto.o
+    0x20000278   0x00000001   Data   RW         1209    .data               sx1276_hal.o
     0x20000279   0x00000003   PAD
-    0x2000027c   0x00000004   Data   RW         1240    .data               sx1276.o
-    0x20000280   0x00000004   Data   RW         1297    .data               utilities.o
-    0x20000284   0x00000004   Data   RW         1622    .data               mc_w.l(stdout.o)
-    0x20000288   0x00000008   Zero   RW          370    .bss                sysdelay.o
-    0x20000290   0x00000180   Zero   RW          959    .bss                process.o
-    0x20000410   0x000000cc   Zero   RW         1086    .bss                app_task.o
-    0x200004dc   0x000004a0   Zero   RW         1134    .bss                loramac.o
-    0x2000097c   0x00000024   Zero   RW         1157    .bss                loramac-api-v3.o
-    0x200009a0   0x0000022c   Zero   RW         1175    .bss                loramaccrypto.o
-    0x20000bcc   0x000001c8   Zero   RW         1238    .bss                sx1276.o
-    0x20000d94   0x00000004   PAD
-    0x20000d98   0x00000400   Zero   RW          131    STACK               startup_efm32g.o
+    0x2000027c   0x00000004   Data   RW         1250    .data               sx1276.o
+    0x20000280   0x00000007   Data   RW         1277    .data               dht11.o
+    0x20000287   0x00000001   PAD
+    0x20000288   0x00000004   Data   RW         1337    .data               utilities.o
+    0x2000028c   0x00000004   Data   RW         1666    .data               mc_w.l(stdout.o)
+    0x20000290   0x00000008   Zero   RW          370    .bss                sysdelay.o
+    0x20000298   0x00000180   Zero   RW          959    .bss                process.o
+    0x20000418   0x000000cc   Zero   RW         1086    .bss                app_task.o
+    0x200004e4   0x000004a0   Zero   RW         1144    .bss                loramac.o
+    0x20000984   0x00000024   Zero   RW         1167    .bss                loramac-api-v3.o
+    0x200009a8   0x0000022c   Zero   RW         1185    .bss                loramaccrypto.o
+    0x20000bd4   0x000001c8   Zero   RW         1248    .bss                sx1276.o
+    0x20000d9c   0x00000040   Zero   RW         1276    .bss                dht11.o
+    0x20000ddc   0x00000004   PAD
+    0x20000de0   0x00000400   Zero   RW          131    STACK               startup_efm32g.o
 
 
 ==============================================================================
@@ -1694,51 +1733,52 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-      1592         14        768          0          0      11654   aes.o
-      1860        412         92        142        204       9856   app_task.o
-        58          0          0          0          0       1141   autostart.o
-       128         18          0         12          0       2637   clock.o
-       726          0          0          0          0       2551   cmac.o
-       484         16         15         28          0       3841   ctimer.o
-      2072         78          0          0          0       8883   em_cmu.o
-       676         30          0          4          0       7333   em_emu.o
-       384         10          0          0          0       1683   em_gpio.o
-       516         10          0          0          0       4073   em_leuart.o
-       168         12         56          0          0       3121   em_rmu.o
-       264          6          0          0          0       3084   em_rtc.o
-       108          8          0          0          0       1200   em_system.o
-       518          0          0          0          0       6408   em_timer.o
-       240          4          0          0          0       1704   em_wdog.o
-       584         18         12         24          0       4691   etimer.o
-       264         44          0         16          0       1638   gy30.o
-       548          6          0          0          0       5019   gyiic.o
-        40          0          0          0          0        455   led.o
-       232         20          0         16          0       3774   leusart.o
-       276          0          0          0          0       3275   list.o
-      1552        106          0         16         36       9524   loramac-api-v3.o
-     12156       1946         40        248       1184      22351   loramac.o
-       696         24          0         32        556       3825   loramaccrypto.o
-       432         64          0          5          0      33433   main.o
-       840         48          0         29        384       6877   process.o
-       128         26          0          0          0        511   rcc.o
-       124         20          0          8          0      25458   rtc.o
-       360         36         11         10          0      30564   rtimer-arch.o
-       120          6          0          4          0       1661   rtimer.o
-       200         18          0          0          0       3513   spi0.o
-        36          8        184          0       1024        812   startup_efm32g.o
-      6572        324        224          4        456      14490   sx1276.o
-      1100        110         84          1          0      34454   sx1276_hal.o
-       340         20          0          0          8       4387   sysdelay.o
-       308         52          0         12          0     211872   system_efm32g.o
-       300         28         23          0          0       6430   time.o
-        84          0          0          0          0       1704   timer.o
-       176         10          0          4          0       2380   utilities.o
-        60         10          0         16          0        915   wdt.o
+      1592         14        768          0          0      11702   aes.o
+      1860        410         92        142        204       9960   app_task.o
+        58          0          0          0          0       1173   autostart.o
+       128         18          0         12          0       2697   clock.o
+       726          0          0          0          0       2583   cmac.o
+       484         16         15         28          0       3905   ctimer.o
+       888        100          0          7         64       3067   dht11.o
+      2072         78          0          0          0       8931   em_cmu.o
+       676         30          0          4          0       7405   em_emu.o
+       384         10          0          0          0       1699   em_gpio.o
+       516         10          0          0          0       4105   em_leuart.o
+       168         12         56          0          0       3181   em_rmu.o
+       264          6          0          0          0       3128   em_rtc.o
+       108          8          0          0          0       1224   em_system.o
+       518          0          0          0          0       6448   em_timer.o
+       240          4          0          0          0       1732   em_wdog.o
+       584         18         12         24          0       4751   etimer.o
+       264         44          0         16          0       1686   gy30.o
+       548          6          0          0          0       5051   gyiic.o
+        40          0          0          0          0        471   led.o
+       232         20          0         16          0       3838   leusart.o
+       276          0          0          0          0       3303   list.o
+      1552        106          0         16         36       9564   loramac-api-v3.o
+     12156       1946         40        248       1184      22399   loramac.o
+       696         24          0         32        556       3869   loramaccrypto.o
+       432         64          0          5          0      33777   main.o
+       840         48          0         29        384       6941   process.o
+       128         26          0          0          0        527   rcc.o
+       124         20          0          8          0      25518   rtc.o
+       360         36         11         10          0      30624   rtimer-arch.o
+       120          6          0          4          0       1709   rtimer.o
+       200         18          0          0          0       3561   spi0.o
+        36          8        184          0       1024        824   startup_efm32g.o
+      6572        324        224          4        456      14562   sx1276.o
+      1088        110         84          1          0      34542   sx1276_hal.o
+       340         20          0          0          8       4447   sysdelay.o
+       308         52          0         12          0     212036   system_efm32g.o
+       300         28         23          0          0       6474   time.o
+        84          0          0          0          0       1736   timer.o
+       176         10          0          4          0       2424   utilities.o
+        60         10          0         16          0        947   wdt.o
 
     ----------------------------------------------------------------------
-     37328       3562       1544        644       3856     503182   Object Totals
+     38204       3660       1544        652       3920     508521   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         6          0          3         13          4          0   (incl. Padding)
+         6          0          3         14          4          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1762,6 +1802,7 @@ Image component sizes
         30          0          0          0          0         68   llshl.o
         36          0          0          0          0         68   llsshr.o
         32          0          0          0          0         68   llushr.o
+        36          0          0          0          0         68   memcpya.o
         36          0          0          0          0        108   memseta.o
       2226         90          0          0          0        444   printfa.o
          0          0          0          4          0          0   stdout.o
@@ -1785,7 +1826,7 @@ Image component sizes
         18          0          0          0          0         68   fflti.o
 
     ----------------------------------------------------------------------
-      4912        154          0          4          0       2768   Library Totals
+      4948        154          0          4          0       2836   Library Totals
          6          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
@@ -1793,11 +1834,11 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
 
        588         44          0          0          0        256   m_ws.l
-      2674        106          0          4          0        996   mc_w.l
+      2710        106          0          4          0       1064   mc_w.l
       1644          4          0          0          0       1516   mf_w.l
 
     ----------------------------------------------------------------------
-      4912        154          0          4          0       2768   Library Totals
+      4948        154          0          4          0       2836   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -1806,15 +1847,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     42240       3716       1544        648       3856     500826   Grand Totals
-     42240       3716       1544        144       3856     500826   ELF Image Totals (compressed)
-     42240       3716       1544        144          0          0   ROM Totals
+     43152       3814       1544        656       3920     506129   Grand Totals
+     43152       3814       1544        148       3920     506129   ELF Image Totals (compressed)
+     43152       3814       1544        148          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                43784 (  42.76kB)
-    Total RW  Size (RW Data + ZI Data)              4504 (   4.40kB)
-    Total ROM Size (Code + RO Data + RW Data)      43928 (  42.90kB)
+    Total RO  Size (Code + RO Data)                44696 (  43.65kB)
+    Total RW  Size (RW Data + ZI Data)              4576 (   4.47kB)
+    Total ROM Size (Code + RO Data + RW Data)      44844 (  43.79kB)
 
 ==============================================================================
 

@@ -424,12 +424,12 @@ void GPIO_ODD_IRQHandler(void)
 
 void BoardGetUniqueId( uint8_t *id )
 {
-    id[7] = 0X12;
-    id[6] = 0X34;
-    id[5] = 0X56;
-    id[4] = 0X78;
-    id[3] = 0X90;
-    id[2] = 0Xab;
-    id[1] = 0Xcd;
-    id[0] = 0Xef;
+    id[7] = 0XB0;
+    id[6] = 0X00;
+    id[5] = 0X00;
+    id[4] = 0X00;
+    id[3] = 0X00;
+    id[2] = 0X00;
+    id[1] = 0X00;
+    id[0] = 0X00;
 }

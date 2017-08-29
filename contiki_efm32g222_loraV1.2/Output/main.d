@@ -100,3 +100,6 @@
 ..\output\main.o: ..\Project\GY30.h
 ..\output\main.o: ..\Device\gyiic.h
 ..\output\main.o: ..\LoraWan\mac\LoRaMac-api.h
+..\output\main.o: ..\Project\DHT11.h
+..\output\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\output\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

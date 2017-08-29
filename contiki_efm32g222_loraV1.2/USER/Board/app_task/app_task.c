@@ -410,54 +410,43 @@ static void OnMacEvent( LoRaMacEventFlags_t *flags, LoRaMacEventInfo_t *info )
     ScheduleNextTx = true;
 }
 
+/*Enable GY30 DATA !*/
 
-/*!
- * \brief   Prepares the payload of the frame
- 
 //static void TxFrame( void )
 //{
+//	uint8_t* BUF;
+//	
+//	Single_Write_GY30(0x01);   // power on
+//		
+//	Single_Write_GY30(0x10);
+
+
+//	Systick_Delay_mS(180);
+//	
+//	BUF = GY_30_Read();
+//	
 //    AppDataSize=0;
-//    AppData[AppDataSize++] = 0;
-//    AppData[AppDataSize++] = 1;
-//    AppData[AppDataSize++] = 2;
-//    AppData[AppDataSize++] = 3;
-//    AppData[AppDataSize++] = 4;
-//    AppData[AppDataSize++] = 5;
-//    AppData[AppDataSize++] = 6;
-//    AppData[AppDataSize++] = 7;
-//    AppData[AppDataSize++] = 8;
-//    AppData[AppDataSize++] = 9;
-//    AppData[AppDataSize++] = 0x0a;
-//    AppData[AppDataSize++] = 0x0b;
-//    AppData[AppDataSize++] = 0x0c;
-//    AppData[AppDataSize++] = 0x0d;
-//    AppData[AppDataSize++] = 0x0e;
-//    AppData[AppDataSize++] = 0x0f;    
+//    AppData[AppDataSize++] = BUF[0];
+//    AppData[AppDataSize++] = BUF[1];  
 //    AppPort=AppDataSize;
+//	
+//	printf("light1=%d	light1=%d\n",0,0);
 //    
 //}
-*/
 
 static void TxFrame( void )
 {
 	uint8_t* BUF;
-	
-	Single_Write_GY30(0x01);   // power on
-		
-	Single_Write_GY30(0x10);
 
-
-	Systick_Delay_mS(180);
-	
-	BUF = GY_30_Read();
-	
+		BUF = DHT11_Read_Data();
     AppDataSize=0;
     AppData[AppDataSize++] = BUF[0];
     AppData[AppDataSize++] = BUF[1];  
+		AppData[AppDataSize++] = BUF[2];
+    AppData[AppDataSize++] = BUF[3]; 
+		AppData[AppDataSize++] = BUF[4];
     AppPort=AppDataSize;
-	
-	printf("light1=%d	light1=%d\n",0,0);
-    
+
 }
 
 
@@ -542,14 +531,12 @@ PROCESS_THREAD(RF_HEARTBEAT_TASK, ev, data)
     PROCESS_WAIT_EVENT_UNTIL(ev==RF_Heartbeat_Post);
     while(1)
     {
-        etimer_set(&et, 128*20 );
+        etimer_set(&et, 128*10 );
         PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
         
-         printf("1111111111111111111111111111111111111111111111111111111111111\n");
-
-        DHT11_Read_Data();
-				TxDHTFrame();
-        sendFrameStatus = LoRaMacSendConfirmedFrame( AppPort, AppData, AppDataSize ,2);//重传次数最大8条
+        printf("1111111111111111111111111111111111111111111111111111111111111\n");
+        TxFrame();
+        sendFrameStatus = LoRaMacSendConfirmedFrame( AppPort, AppData, AppDataSize ,1);//重传次数最大8条
         printf("sendFrameStatus:%X\n",sendFrameStatus);
         printf("22222222222222222222222222222222222222222222222222222222222\n");
 

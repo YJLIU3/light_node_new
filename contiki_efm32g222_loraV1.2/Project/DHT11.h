@@ -14,7 +14,7 @@
 
 
 /*read temp and humidity data*/
-uint8_t DHT11_Read_Data();
+uint8_t* DHT11_Read_Data();
 void SendData(uint8_t *a);
 void DHTDelayMs( uint32_t ms );
 void TxDHTFrame();

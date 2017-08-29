@@ -70,7 +70,7 @@ static uint8_t DHT11_Read_Byte(void)
 	return Data;
 }
 
-uint8_t DHT11_Read_Data()
+uint8_t* DHT11_Read_Data()
 {
 	uint8_t i = 0;
 	char check[] = "Device Not Available\n";
@@ -78,6 +78,8 @@ uint8_t DHT11_Read_Data()
 	
 	
 	DHT11_Rst();
+	
+	Systick_Delay_uS(50);
 	
 	if(DHT11_Check() == 0)		//当检测到DHT11给主控芯片的输入为低电压时，说明DHT11开始响应
 	{
@@ -91,7 +93,7 @@ uint8_t DHT11_Read_Data()
 		DHT_IOPushPull();
 		GPIO_PinOutSet(OUT_Port, OUT_Pin);
 	
-		if(Data_Buf[0]+Data_Buf[1]+Data_Buf[2]+Data_Buf[3]!=Data_Buf[4])
+		if(Data_Buf[0]+Data_Buf[1]+Data_Buf[2]+Data_Buf[3]==Data_Buf[4])
 		{
 			printf("SHI DU WEI:");
 			printf("%c",Data_Buf[0]/10+48);
@@ -107,18 +109,18 @@ uint8_t DHT11_Read_Data()
 			printf("%c",Data_Buf[3]/10+48);
 			printf("%c",Data_Buf[3]%10+48);
 			printf("\n");
-			return 0;
+			return Data_Buf;
 		}
 		else
 		{
-			//printf("%s",error_data);
-			return 1;
+			printf("%s",error_data);
+			return 0;
 		}
 	}
 	else
 	{
-		//printf("%s",check);
-		return 1;
+		printf("%s",check);
+		return 0;
 	}
 }
 

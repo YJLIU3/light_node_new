@@ -38,7 +38,7 @@ I (..\Device\efm32g_af_ports.h)(0x55715100)
 I (..\Device\efm32g_af_pins.h)(0x55715100)
 F (..\CMSIS\startup\startup_efm32g.s)(0x55B851D4)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I "H:\Graduation_design\light_data _new\light_node_new\contiki_efm32g222_loraV1.2\Project\RTE"-I D:\Keil_v5\ARM\PACK\Keil\EFM32Gxxx_DFP\1.2.0\Device\EFM32G\Include-I D:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 515" --pd "EFM32G222F128 SETA 1"--list .\startup_efm32g.lst --xref -o ..\output\startup_efm32g.o --depend ..\output\startup_efm32g.d)
 F (..\CMSIS\core_cm3.h)(0x538426C6)()
-F (..\USER\Main\main.c)(0x594C6FF1)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\Project -I..\CMSIS\startup -I..\emlib\src -I..\emlib\inc -I..\Device -I..\CMSIS -I..\USER\Main -I..\USER\Board\RCC -I..\USER\Board\LED -I..\contiki-2.7\core -I..\contiki-2.7\cpu -I..\contiki-2.7\core\lib -I..\contiki-2.7\core\ctk -I..\contiki-2.7\core\sys -I..\USER\contiki -I..\contiki-2.7\cpu\arm\stm32f103 -I..\USER\Board\Rtc -I..\USER\Board\TIME -I..\USER\app_task -I..\USER\Board\LEUSART -I..\USER\Board\SPI -I..\Peripheral\SX1278\hal -I..\Peripheral\SX1278\radio -I..\LoraWan\crypto -I..\LoraWan\mac -I..\USER\Board\WTD -I..\USER\Board\USER_DATA --c99-I "H:\Graduation_design\light_data _new\light_node_new\contiki_efm32g222_loraV1.2\Project\RTE"-I D:\Keil_v5\ARM\PACK\Keil\EFM32Gxxx_DFP\1.2.0\Device\EFM32G\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DEFM32G222F128 -DUSE_BAND_433 -DEFM32G222F128-o ..\output\main.o --omf_browse ..\output\main.crf --depend ..\output\main.d)
+F (..\USER\Main\main.c)(0x59A4D682)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\Project -I..\CMSIS\startup -I..\emlib\src -I..\emlib\inc -I..\Device -I..\CMSIS -I..\USER\Main -I..\USER\Board\RCC -I..\USER\Board\LED -I..\contiki-2.7\core -I..\contiki-2.7\cpu -I..\contiki-2.7\core\lib -I..\contiki-2.7\core\ctk -I..\contiki-2.7\core\sys -I..\USER\contiki -I..\contiki-2.7\cpu\arm\stm32f103 -I..\USER\Board\Rtc -I..\USER\Board\TIME -I..\USER\app_task -I..\USER\Board\LEUSART -I..\USER\Board\SPI -I..\Peripheral\SX1278\hal -I..\Peripheral\SX1278\radio -I..\LoraWan\crypto -I..\LoraWan\mac -I..\USER\Board\WTD -I..\USER\Board\USER_DATA --c99-I "H:\Graduation_design\light_data _new\light_node_new\contiki_efm32g222_loraV1.2\Project\RTE"-I D:\Keil_v5\ARM\PACK\Keil\EFM32Gxxx_DFP\1.2.0\Device\EFM32G\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DEFM32G222F128 -DUSE_BAND_433 -DEFM32G222F128-o ..\output\main.o --omf_browse ..\output\main.crf --depend ..\output\main.d)
 I (..\USER\Main\EFM32_include.h)(0x58579023)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x54C245B8)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
@@ -140,6 +140,9 @@ I (..\USER\app_task\app_task.h)(0x57EE1332)
 I (..\Project\GY30.h)(0x594B83E2)
 I (..\Device\gyiic.h)(0x594B83A2)
 I (..\LoraWan\mac\LoRaMac-api.h)(0x583F7B25)
+I (..\Project\DHT11.h)(0x59A4C7F8)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x54C245B8)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x54C245B8)
 F (..\USER\Main\sysdelay.c)(0x581FE07C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\Project -I..\CMSIS\startup -I..\emlib\src -I..\emlib\inc -I..\Device -I..\CMSIS -I..\USER\Main -I..\USER\Board\RCC -I..\USER\Board\LED -I..\contiki-2.7\core -I..\contiki-2.7\cpu -I..\contiki-2.7\core\lib -I..\contiki-2.7\core\ctk -I..\contiki-2.7\core\sys -I..\USER\contiki -I..\contiki-2.7\cpu\arm\stm32f103 -I..\USER\Board\Rtc -I..\USER\Board\TIME -I..\USER\app_task -I..\USER\Board\LEUSART -I..\USER\Board\SPI -I..\Peripheral\SX1278\hal -I..\Peripheral\SX1278\radio -I..\LoraWan\crypto -I..\LoraWan\mac -I..\USER\Board\WTD -I..\USER\Board\USER_DATA --c99-I "H:\Graduation_design\light_data _new\light_node_new\contiki_efm32g222_loraV1.2\Project\RTE"-I D:\Keil_v5\ARM\PACK\Keil\EFM32Gxxx_DFP\1.2.0\Device\EFM32G\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DEFM32G222F128 -DUSE_BAND_433 -DEFM32G222F128-o ..\output\sysdelay.o --omf_browse ..\output\sysdelay.crf --depend ..\output\sysdelay.d)
 I (..\emlib\inc\em_cmu.h)(0x55715100)
 I (..\Device\em_device.h)(0x55715100)
@@ -712,6 +715,75 @@ I (..\USER\Board\SPI\spi0.h)(0x58461D02)
 I (..\USER\Board\WTD\WDT.h)(0x57A16F60)
 I (..\emlib\inc\em_wdog.h)(0x55715100)
 I (..\Device\gyiic.h)(0x594B83A2)
+F (.\DHT11.c)(0x59A4D6F3)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\Project -I..\CMSIS\startup -I..\emlib\src -I..\emlib\inc -I..\Device -I..\CMSIS -I..\USER\Main -I..\USER\Board\RCC -I..\USER\Board\LED -I..\contiki-2.7\core -I..\contiki-2.7\cpu -I..\contiki-2.7\core\lib -I..\contiki-2.7\core\ctk -I..\contiki-2.7\core\sys -I..\USER\contiki -I..\contiki-2.7\cpu\arm\stm32f103 -I..\USER\Board\Rtc -I..\USER\Board\TIME -I..\USER\app_task -I..\USER\Board\LEUSART -I..\USER\Board\SPI -I..\Peripheral\SX1278\hal -I..\Peripheral\SX1278\radio -I..\LoraWan\crypto -I..\LoraWan\mac -I..\USER\Board\WTD -I..\USER\Board\USER_DATA --c99-I "H:\Graduation_design\light_data _new\light_node_new\contiki_efm32g222_loraV1.2\Project\RTE"-I D:\Keil_v5\ARM\PACK\Keil\EFM32Gxxx_DFP\1.2.0\Device\EFM32G\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DEFM32G222F128 -DUSE_BAND_433 -DEFM32G222F128-o ..\output\dht11.o --omf_browse ..\output\dht11.crf --depend ..\output\dht11.d)
+I (DHT11.h)(0x59A4C7F8)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x54C245B8)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x54C245B8)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x54C245B8)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x54C245B8)
+I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x54C245B8)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
+I (..\Device\em_device.h)(0x55715100)
+I (..\Device\efm32g222f128.h)(0x55715100)
+I (..\CMSIS\core_cm3.h)(0x538426C6)
+I (..\CMSIS\core_cmInstr.h)(0x5302A2D0)
+I (..\CMSIS\core_cmFunc.h)(0x5302A2D0)
+I (..\Device\system_efm32g.h)(0x55715100)
+I (..\Device\efm32g_aes.h)(0x55715100)
+I (..\Device\efm32g_dma_ch.h)(0x55715100)
+I (..\Device\efm32g_msc.h)(0x55715100)
+I (..\Device\efm32g_emu.h)(0x55715100)
+I (..\Device\efm32g_rmu.h)(0x55715100)
+I (..\Device\efm32g_timer_cc.h)(0x55715100)
+I (..\Device\efm32g_timer.h)(0x55715100)
+I (..\Device\efm32g_usart.h)(0x55715100)
+I (..\Device\efm32g_leuart.h)(0x55715100)
+I (..\Device\efm32g_rtc.h)(0x55715100)
+I (..\Device\efm32g_letimer.h)(0x55715100)
+I (..\Device\efm32g_pcnt.h)(0x55715100)
+I (..\Device\efm32g_acmp.h)(0x55715100)
+I (..\Device\efm32g_prs_ch.h)(0x55715100)
+I (..\Device\efm32g_dac.h)(0x55715100)
+I (..\Device\efm32g_gpio_p.h)(0x55715100)
+I (..\Device\efm32g_gpio.h)(0x55715100)
+I (..\Device\efm32g_vcmp.h)(0x55715100)
+I (..\Device\efm32g_adc.h)(0x55715100)
+I (..\Device\efm32g_i2c.h)(0x55715100)
+I (..\Device\efm32g_wdog.h)(0x55715100)
+I (..\Device\efm32g_dma_descriptor.h)(0x55715100)
+I (..\Device\efm32g_devinfo.h)(0x55715100)
+I (..\Device\efm32g_romtable.h)(0x55715100)
+I (..\Device\efm32g_calibrate.h)(0x55715100)
+I (..\Device\efm32g_dmareq.h)(0x55715100)
+I (..\Device\efm32g_dmactrl.h)(0x55715100)
+I (..\Device\efm32g_af_ports.h)(0x55715100)
+I (..\Device\efm32g_af_pins.h)(0x55715100)
+I (..\emlib\inc\em_chip.h)(0x55715100)
+I (..\emlib\inc\em_system.h)(0x55715100)
+I (..\emlib\inc\em_cmu.h)(0x55715100)
+I (..\emlib\inc\em_bitband.h)(0x55715100)
+I (..\USER\Main\EFM32_include.h)(0x58579023)
+I (..\emlib\inc\em_emu.h)(0x55715100)
+I (..\emlib\inc\em_gpio.h)(0x55715100)
+I (..\emlib\inc\em_assert.h)(0x55715100)
+I (..\emlib\inc\em_prs.h)(0x55715100)
+I (..\emlib\inc\em_timer.h)(0x55715100)
+I (..\emlib\inc\em_usart.h)(0x55715100)
+I (..\emlib\inc\em_rtc.h)(0x55715100)
+I (..\emlib\inc\em_leuart.h)(0x55715100)
+I (..\emlib\inc\em_rmu.h)(0x55715100)
+I (..\emlib\inc\em_pcnt.h)(0x55715100)
+I (..\emlib\inc\em_i2c.h)(0x55715100)
+I (..\USER\Main\sysdelay.h)(0x581FE07C)
+I (..\USER\Board\TIME\time.h)(0x581FE84E)
+I (..\USER\Board\LEUSART\leusart.h)(0x573FC983)
+I (..\USER\Board\Rtc\rtc.h)(0x581FE893)
+I (..\USER\Board\RCC\rcc.h)(0x573FC6C8)
+I (..\USER\Board\USER_DATA\user_data.h)(0x58579023)
+I (..\USER\Board\LED\led.h)(0x58460A05)
+I (..\USER\Board\SPI\spi0.h)(0x58461D02)
+I (..\USER\Board\WTD\WDT.h)(0x57A16F60)
+I (..\emlib\inc\em_wdog.h)(0x55715100)
 F (..\emlib\src\em_system.c)(0x55715100)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\Project -I..\CMSIS\startup -I..\emlib\src -I..\emlib\inc -I..\Device -I..\CMSIS -I..\USER\Main -I..\USER\Board\RCC -I..\USER\Board\LED -I..\contiki-2.7\core -I..\contiki-2.7\cpu -I..\contiki-2.7\core\lib -I..\contiki-2.7\core\ctk -I..\contiki-2.7\core\sys -I..\USER\contiki -I..\contiki-2.7\cpu\arm\stm32f103 -I..\USER\Board\Rtc -I..\USER\Board\TIME -I..\USER\app_task -I..\USER\Board\LEUSART -I..\USER\Board\SPI -I..\Peripheral\SX1278\hal -I..\Peripheral\SX1278\radio -I..\LoraWan\crypto -I..\LoraWan\mac -I..\USER\Board\WTD -I..\USER\Board\USER_DATA --c99-I "H:\Graduation_design\light_data _new\light_node_new\contiki_efm32g222_loraV1.2\Project\RTE"-I D:\Keil_v5\ARM\PACK\Keil\EFM32Gxxx_DFP\1.2.0\Device\EFM32G\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DEFM32G222F128 -DUSE_BAND_433 -DEFM32G222F128-o ..\output\em_system.o --omf_browse ..\output\em_system.crf --depend ..\output\em_system.d)
 I (..\emlib\inc\em_system.h)(0x55715100)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x54C245B8)
@@ -1384,7 +1456,7 @@ I (..\emlib\inc\em_timer.h)(0x55715100)
 I (..\USER\Board\TIME\time.h)(0x581FE84E)
 F (..\contiki-2.7\core\lib\list.c)(0x5279FA9B)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\Project -I..\CMSIS\startup -I..\emlib\src -I..\emlib\inc -I..\Device -I..\CMSIS -I..\USER\Main -I..\USER\Board\RCC -I..\USER\Board\LED -I..\contiki-2.7\core -I..\contiki-2.7\cpu -I..\contiki-2.7\core\lib -I..\contiki-2.7\core\ctk -I..\contiki-2.7\core\sys -I..\USER\contiki -I..\contiki-2.7\cpu\arm\stm32f103 -I..\USER\Board\Rtc -I..\USER\Board\TIME -I..\USER\app_task -I..\USER\Board\LEUSART -I..\USER\Board\SPI -I..\Peripheral\SX1278\hal -I..\Peripheral\SX1278\radio -I..\LoraWan\crypto -I..\LoraWan\mac -I..\USER\Board\WTD -I..\USER\Board\USER_DATA --c99-I "H:\Graduation_design\light_data _new\light_node_new\contiki_efm32g222_loraV1.2\Project\RTE"-I D:\Keil_v5\ARM\PACK\Keil\EFM32Gxxx_DFP\1.2.0\Device\EFM32G\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DEFM32G222F128 -DUSE_BAND_433 -DEFM32G222F128-o ..\output\list.o --omf_browse ..\output\list.crf --depend ..\output\list.d)
 I (..\contiki-2.7\core\lib/list.h)(0x5279FA9B)
-F (..\USER\Board\app_task\app_task.c)(0x59A3E583)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\Project -I..\CMSIS\startup -I..\emlib\src -I..\emlib\inc -I..\Device -I..\CMSIS -I..\USER\Main -I..\USER\Board\RCC -I..\USER\Board\LED -I..\contiki-2.7\core -I..\contiki-2.7\cpu -I..\contiki-2.7\core\lib -I..\contiki-2.7\core\ctk -I..\contiki-2.7\core\sys -I..\USER\contiki -I..\contiki-2.7\cpu\arm\stm32f103 -I..\USER\Board\Rtc -I..\USER\Board\TIME -I..\USER\app_task -I..\USER\Board\LEUSART -I..\USER\Board\SPI -I..\Peripheral\SX1278\hal -I..\Peripheral\SX1278\radio -I..\LoraWan\crypto -I..\LoraWan\mac -I..\USER\Board\WTD -I..\USER\Board\USER_DATA --c99-I "H:\Graduation_design\light_data _new\light_node_new\contiki_efm32g222_loraV1.2\Project\RTE"-I D:\Keil_v5\ARM\PACK\Keil\EFM32Gxxx_DFP\1.2.0\Device\EFM32G\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DEFM32G222F128 -DUSE_BAND_433 -DEFM32G222F128-o ..\output\app_task.o --omf_browse ..\output\app_task.crf --depend ..\output\app_task.d)
+F (..\USER\Board\app_task\app_task.c)(0x59A4D375)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\Project -I..\CMSIS\startup -I..\emlib\src -I..\emlib\inc -I..\Device -I..\CMSIS -I..\USER\Main -I..\USER\Board\RCC -I..\USER\Board\LED -I..\contiki-2.7\core -I..\contiki-2.7\cpu -I..\contiki-2.7\core\lib -I..\contiki-2.7\core\ctk -I..\contiki-2.7\core\sys -I..\USER\contiki -I..\contiki-2.7\cpu\arm\stm32f103 -I..\USER\Board\Rtc -I..\USER\Board\TIME -I..\USER\app_task -I..\USER\Board\LEUSART -I..\USER\Board\SPI -I..\Peripheral\SX1278\hal -I..\Peripheral\SX1278\radio -I..\LoraWan\crypto -I..\LoraWan\mac -I..\USER\Board\WTD -I..\USER\Board\USER_DATA --c99-I "H:\Graduation_design\light_data _new\light_node_new\contiki_efm32g222_loraV1.2\Project\RTE"-I D:\Keil_v5\ARM\PACK\Keil\EFM32Gxxx_DFP\1.2.0\Device\EFM32G\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DEFM32G222F128 -DUSE_BAND_433 -DEFM32G222F128-o ..\output\app_task.o --omf_browse ..\output\app_task.crf --depend ..\output\app_task.d)
 I (..\contiki-2.7\core\contiki.h)(0x5279FA9B)
 I (..\contiki-2.7\core\contiki-version.h)(0x5279FA9B)
 I (..\USER\contiki\contiki-conf.h)(0x5840EDA8)
@@ -1487,7 +1559,7 @@ I (..\emlib\inc\em_wdog.h)(0x55715100)
 I (..\LoraWan\mac\Comissioning.h)(0x59A3E39B)
 I (..\Project\GY30.h)(0x594B83E2)
 I (..\Device\gyiic.h)(0x594B83A2)
-I (..\Project\DHT11.h)(0x59A3CF62)
+I (..\Project\DHT11.h)(0x59A4C7F8)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x54C245B8)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x54C245B8)
 I (..\LoraWan\mac\LoRaMac-api.h)(0x583F7B25)
@@ -1835,75 +1907,6 @@ I (..\LoraWan\mac\LoRaMacTest.h)(0x57697A6A)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x54C245B8)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x54C245B8)
 I (..\USER\app_task\app_task.h)(0x57EE1332)
-F (.\DHT11.c)(0x59A3E75F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\Project -I..\CMSIS\startup -I..\emlib\src -I..\emlib\inc -I..\Device -I..\CMSIS -I..\USER\Main -I..\USER\Board\RCC -I..\USER\Board\LED -I..\contiki-2.7\core -I..\contiki-2.7\cpu -I..\contiki-2.7\core\lib -I..\contiki-2.7\core\ctk -I..\contiki-2.7\core\sys -I..\USER\contiki -I..\contiki-2.7\cpu\arm\stm32f103 -I..\USER\Board\Rtc -I..\USER\Board\TIME -I..\USER\app_task -I..\USER\Board\LEUSART -I..\USER\Board\SPI -I..\Peripheral\SX1278\hal -I..\Peripheral\SX1278\radio -I..\LoraWan\crypto -I..\LoraWan\mac -I..\USER\Board\WTD -I..\USER\Board\USER_DATA --c99-I "H:\Graduation_design\light_data _new\light_node_new\contiki_efm32g222_loraV1.2\Project\RTE"-I D:\Keil_v5\ARM\PACK\Keil\EFM32Gxxx_DFP\1.2.0\Device\EFM32G\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DEFM32G222F128 -DUSE_BAND_433 -DEFM32G222F128-o ..\output\dht11.o --omf_browse ..\output\dht11.crf --depend ..\output\dht11.d)
-I (DHT11.h)(0x59A3CF62)
-I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x54C245B8)
-I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x54C245B8)
-I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x54C245B8)
-I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x54C245B8)
-I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x54C245B8)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
-I (..\Device\em_device.h)(0x55715100)
-I (..\Device\efm32g222f128.h)(0x55715100)
-I (..\CMSIS\core_cm3.h)(0x538426C6)
-I (..\CMSIS\core_cmInstr.h)(0x5302A2D0)
-I (..\CMSIS\core_cmFunc.h)(0x5302A2D0)
-I (..\Device\system_efm32g.h)(0x55715100)
-I (..\Device\efm32g_aes.h)(0x55715100)
-I (..\Device\efm32g_dma_ch.h)(0x55715100)
-I (..\Device\efm32g_msc.h)(0x55715100)
-I (..\Device\efm32g_emu.h)(0x55715100)
-I (..\Device\efm32g_rmu.h)(0x55715100)
-I (..\Device\efm32g_timer_cc.h)(0x55715100)
-I (..\Device\efm32g_timer.h)(0x55715100)
-I (..\Device\efm32g_usart.h)(0x55715100)
-I (..\Device\efm32g_leuart.h)(0x55715100)
-I (..\Device\efm32g_rtc.h)(0x55715100)
-I (..\Device\efm32g_letimer.h)(0x55715100)
-I (..\Device\efm32g_pcnt.h)(0x55715100)
-I (..\Device\efm32g_acmp.h)(0x55715100)
-I (..\Device\efm32g_prs_ch.h)(0x55715100)
-I (..\Device\efm32g_dac.h)(0x55715100)
-I (..\Device\efm32g_gpio_p.h)(0x55715100)
-I (..\Device\efm32g_gpio.h)(0x55715100)
-I (..\Device\efm32g_vcmp.h)(0x55715100)
-I (..\Device\efm32g_adc.h)(0x55715100)
-I (..\Device\efm32g_i2c.h)(0x55715100)
-I (..\Device\efm32g_wdog.h)(0x55715100)
-I (..\Device\efm32g_dma_descriptor.h)(0x55715100)
-I (..\Device\efm32g_devinfo.h)(0x55715100)
-I (..\Device\efm32g_romtable.h)(0x55715100)
-I (..\Device\efm32g_calibrate.h)(0x55715100)
-I (..\Device\efm32g_dmareq.h)(0x55715100)
-I (..\Device\efm32g_dmactrl.h)(0x55715100)
-I (..\Device\efm32g_af_ports.h)(0x55715100)
-I (..\Device\efm32g_af_pins.h)(0x55715100)
-I (..\emlib\inc\em_chip.h)(0x55715100)
-I (..\emlib\inc\em_system.h)(0x55715100)
-I (..\emlib\inc\em_cmu.h)(0x55715100)
-I (..\emlib\inc\em_bitband.h)(0x55715100)
-I (..\USER\Main\EFM32_include.h)(0x58579023)
-I (..\emlib\inc\em_emu.h)(0x55715100)
-I (..\emlib\inc\em_gpio.h)(0x55715100)
-I (..\emlib\inc\em_assert.h)(0x55715100)
-I (..\emlib\inc\em_prs.h)(0x55715100)
-I (..\emlib\inc\em_timer.h)(0x55715100)
-I (..\emlib\inc\em_usart.h)(0x55715100)
-I (..\emlib\inc\em_rtc.h)(0x55715100)
-I (..\emlib\inc\em_leuart.h)(0x55715100)
-I (..\emlib\inc\em_rmu.h)(0x55715100)
-I (..\emlib\inc\em_pcnt.h)(0x55715100)
-I (..\emlib\inc\em_i2c.h)(0x55715100)
-I (..\USER\Main\sysdelay.h)(0x581FE07C)
-I (..\USER\Board\TIME\time.h)(0x581FE84E)
-I (..\USER\Board\LEUSART\leusart.h)(0x573FC983)
-I (..\USER\Board\Rtc\rtc.h)(0x581FE893)
-I (..\USER\Board\RCC\rcc.h)(0x573FC6C8)
-I (..\USER\Board\USER_DATA\user_data.h)(0x58579023)
-I (..\USER\Board\LED\led.h)(0x58460A05)
-I (..\USER\Board\SPI\spi0.h)(0x58461D02)
-I (..\USER\Board\WTD\WDT.h)(0x57A16F60)
-I (..\emlib\inc\em_wdog.h)(0x55715100)
 F (..\LoraWan\crypto\aes.c)(0x5854EAE0)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\Project -I..\CMSIS\startup -I..\emlib\src -I..\emlib\inc -I..\Device -I..\CMSIS -I..\USER\Main -I..\USER\Board\RCC -I..\USER\Board\LED -I..\contiki-2.7\core -I..\contiki-2.7\cpu -I..\contiki-2.7\core\lib -I..\contiki-2.7\core\ctk -I..\contiki-2.7\core\sys -I..\USER\contiki -I..\contiki-2.7\cpu\arm\stm32f103 -I..\USER\Board\Rtc -I..\USER\Board\TIME -I..\USER\app_task -I..\USER\Board\LEUSART -I..\USER\Board\SPI -I..\Peripheral\SX1278\hal -I..\Peripheral\SX1278\radio -I..\LoraWan\crypto -I..\LoraWan\mac -I..\USER\Board\WTD -I..\USER\Board\USER_DATA --c99-I "H:\Graduation_design\light_data _new\light_node_new\contiki_efm32g222_loraV1.2\Project\RTE"-I D:\Keil_v5\ARM\PACK\Keil\EFM32Gxxx_DFP\1.2.0\Device\EFM32G\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DEFM32G222F128 -DUSE_BAND_433 -DEFM32G222F128-o ..\output\aes.o --omf_browse ..\output\aes.crf --depend ..\output\aes.d)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x54C245B8)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)

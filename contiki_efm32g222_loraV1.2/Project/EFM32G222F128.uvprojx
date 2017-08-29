@@ -502,6 +502,11 @@
               <FileType>1</FileType>
               <FilePath>.\GY30.c</FilePath>
             </File>
+            <File>
+              <FileName>DHT11.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\DHT11.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

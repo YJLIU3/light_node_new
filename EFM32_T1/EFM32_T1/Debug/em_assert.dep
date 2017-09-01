@@ -1,0 +1,4 @@
+Debug/em_assert.o: \
+ C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32/framework/emlib/src/em_assert.c \
+ C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32/framework/emlib/inc/em_assert.h \
+ d:\sysgcc\arm-eabi\lib\gcc\arm-eabi\6.2.0\include\stdbool.h

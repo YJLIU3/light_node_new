@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{8a3aa759-9057-4085-8f5f-625b37cbb10c}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{85a6943f-6d66-463f-8b58-889fdafc8761}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource files">
+      <UniqueIdentifier>{0ba5c949-52c3-45ad-a0e6-64c8e15310ae}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Make files">
+      <UniqueIdentifier>{2307358c-4774-47de-ad1d-985e38542a83}</UniqueIdentifier>
+      <Extensions>*.mak</Extensions>
+    </Filter>
+    <Filter Include="Source files\Device-specific files">
+      <UniqueIdentifier>{199d203e-ae04-46a8-9259-19d7087c5309}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Device-specific files">
+      <UniqueIdentifier>{32d5b4b2-52e8-494f-abfc-e3b5c23cbd29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Device-specific files\Emlib">
+      <UniqueIdentifier>{aa76de5f-b8f2-4a2c-b26f-70e2a95963f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Device-specific files\Emlib">
+      <UniqueIdentifier>{c8744553-5b54-4f02-867b-e403b4e5c2b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Device-specific files\contiki_sys">
+      <UniqueIdentifier>{74691c10-21e2-4523-a6e7-eb7ede531346}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Device-specific files\board">
+      <UniqueIdentifier>{f23d9aba-d9fa-4102-896a-5c3f9347787b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Device-specific files\lora_driver">
+      <UniqueIdentifier>{5bdb32f1-75a7-4669-b00c-81f429671e9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Device-specific files\lora_mac">
+      <UniqueIdentifier>{bbb007a7-931b-455b-b651-ec8889cca84f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Device-specific files\lora_application">
+      <UniqueIdentifier>{9ebf6599-957e-43d6-b848-dba70078c63b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VisualGDB settings">
+      <UniqueIdentifier>{327fb7d2-3539-41d5-a96f-d4f5d466d620}</UniqueIdentifier>
+      <Extensions>*.vgdbsettings</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_acmp.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_adc.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_aes.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_assert.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_burtc.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_cmu.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_cryotimer.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_crypto.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_dac.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_dbg.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_dma.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_ebi.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_emu.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_gpcrc.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_gpio.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_i2c.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_idac.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_int.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_lcd.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_ldma.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_lesense.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_letimer.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_leuart.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_mpu.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_msc.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_opamp.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_pcnt.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_prs.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_rmu.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_rtc.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_rtcc.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_system.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_timer.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_usart.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_vcmp.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_wdog.c">
+      <Filter>Source files\Device-specific files\Emlib</Filter>
+    </ClCompile>
+    <ClCompile Include="board\rcc.c">
+      <Filter>Source files\Device-specific files\board</Filter>
+    </ClCompile>
+    <ClCompile Include="board\rtc.c">
+      <Filter>Source files\Device-specific files\board</Filter>
+    </ClCompile>
+    <ClCompile Include="contiki_sys\arg.c">
+      <Filter>Source files\Device-specific files\contiki_sys</Filter>
+    </ClCompile>
+    <ClCompile Include="contiki_sys\autostart.c">
+      <Filter>Source files\Device-specific files\contiki_sys</Filter>
+    </ClCompile>
+    <ClCompile Include="contiki_sys\clock.c">
+      <Filter>Source files\Device-specific files\contiki_sys</Filter>
+    </ClCompile>
+    <ClCompile Include="contiki_sys\ctimer.c">
+      <Filter>Source files\Device-specific files\contiki_sys</Filter>
+    </ClCompile>
+    <ClCompile Include="contiki_sys\energest.c">
+      <Filter>Source files\Device-specific files\contiki_sys</Filter>
+    </ClCompile>
+    <ClCompile Include="contiki_sys\etimer.c">
+      <Filter>Source files\Device-specific files\contiki_sys</Filter>
+    </ClCompile>
+    <ClCompile Include="contiki_sys\list.c">
+      <Filter>Source files\Device-specific files\contiki_sys</Filter>
+    </ClCompile>
+    <ClCompile Include="contiki_sys\process.c">
+      <Filter>Source files\Device-specific files\contiki_sys</Filter>
+    </ClCompile>
+    <ClCompile Include="contiki_sys\procinit.c">
+      <Filter>Source files\Device-specific files\contiki_sys</Filter>
+    </ClCompile>
+    <ClCompile Include="contiki_sys\rtimer.c">
+      <Filter>Source files\Device-specific files\contiki_sys</Filter>
+    </ClCompile>
+    <ClCompile Include="contiki_sys\rtimer-arch.c">
+      <Filter>Source files\Device-specific files\contiki_sys</Filter>
+    </ClCompile>
+    <ClCompile Include="contiki_sys\stimer.c">
+      <Filter>Source files\Device-specific files\contiki_sys</Filter>
+    </ClCompile>
+    <ClCompile Include="contiki_sys\time.c">
+      <Filter>Source files\Device-specific files\contiki_sys</Filter>
+    </ClCompile>
+    <ClCompile Include="contiki_sys\timer.c">
+      <Filter>Source files\Device-specific files\contiki_sys</Filter>
+    </ClCompile>
+    <ClCompile Include="board\Gpio_Interrupt.c">
+      <Filter>Source files\Device-specific files\board</Filter>
+    </ClCompile>
+    <ClCompile Include="board\LED.c">
+      <Filter>Source files\Device-specific files\board</Filter>
+    </ClCompile>
+    <ClCompile Include="board\leusart.c">
+      <Filter>Source files\Device-specific files\board</Filter>
+    </ClCompile>
+    <ClCompile Include="board\spi0.c">
+      <Filter>Source files\Device-specific files\board</Filter>
+    </ClCompile>
+    <ClCompile Include="board\WDT.c">
+      <Filter>Source files\Device-specific files\board</Filter>
+    </ClCompile>
+    <ClCompile Include="lora_driver\sx1276.c">
+      <Filter>Source files\Device-specific files\lora_driver</Filter>
+    </ClCompile>
+    <ClCompile Include="board\GY30.c">
+      <Filter>Source files\Device-specific files\board</Filter>
+    </ClCompile>
+    <ClCompile Include="board\gyiic.c">
+      <Filter>Source files\Device-specific files\board</Filter>
+    </ClCompile>
+    <ClCompile Include="syscall.cpp">
+      <Filter>Source files\Device-specific files\contiki_sys</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\EFM32G\Devices\Source\system_efm32g.c">
+      <Filter>Source files\Device-specific files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\EFM32G\StartupFiles\startup_efm32g.c">
+      <Filter>Source files\Device-specific files</Filter>
+    </ClCompile>
+    <ClCompile Include="sysdelay.cpp">
+      <Filter>Source files\Device-specific files\board</Filter>
+    </ClCompile>
+    <ClCompile Include="board\myprintf.cpp">
+      <Filter>Source files\Device-specific files\board</Filter>
+    </ClCompile>
+    <ClCompile Include="lora_driver\sx1276_hal.c">
+      <Filter>Source files\Device-specific files\lora_driver</Filter>
+    </ClCompile>
+    <ClCompile Include="lora_application\app_task.c">
+      <Filter>Source files\Device-specific files\lora_application</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+    <None Include="debug.mak">
+      <Filter>Make files</Filter>
+    </None>
+    <None Include="release.mak">
+      <Filter>Make files</Filter>
+    </None>
+    <None Include="efm32.mak">
+      <Filter>Source files\Device-specific files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\arm_common_tables.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\arm_const_structs.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\arm_math.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\cmsis_armcc.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\cmsis_armcc_V6.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\cmsis_gcc.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_cm0.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_cm0plus.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_cm3.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_cm4.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_cm7.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_cmFunc.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_cmInstr.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_cmSimd.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_sc000.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_sc300.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_acmp.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_adc.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_aes.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_assert.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_bitband.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_burtc.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_bus.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_chip.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_cmu.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_common.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_cryotimer.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_crypto.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_dac.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_dbg.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_dma.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_ebi.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_emu.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_gpcrc.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_gpio.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_i2c.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_idac.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_int.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_lcd.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_ldma.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_lesense.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_letimer.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_leuart.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_mpu.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_msc.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_opamp.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_pcnt.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_prs.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_ramfunc.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_rmu.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_rtc.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_rtcc.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_system.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_timer.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_usart.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_vcmp.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_version.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_wdog.h">
+      <Filter>Header files\Device-specific files\Emlib</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="EFM32_T1.rc">
+      <Filter>Resource files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="efm32.xml">
+      <Filter>VisualGDB settings</Filter>
+    </Xml>
+  </ItemGroup>
+</Project>

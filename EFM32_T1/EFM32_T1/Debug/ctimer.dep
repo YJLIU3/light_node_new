@@ -1,0 +1,16 @@
+Debug/ctimer.o: contiki_sys/ctimer.c contiki_sys/ctimer.h \
+ contiki_sys/etimer.h contiki_sys/timer.h contiki_sys/clock.h \
+ contiki_sys/contiki-conf.h \
+ d:\sysgcc\arm-eabi\lib\gcc\arm-eabi\6.2.0\include\stdint.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\stdint.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\machine\_default_types.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\features.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\_newlib_version.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\_intsup.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\_stdint.h \
+ contiki_sys/process.h contiki_sys/pt.h contiki_sys/lc.h \
+ contiki_sys/lc-switch.h contiki_sys/cc.h contiki_sys/contiki.h \
+ contiki_sys/contiki-version.h contiki_sys/contiki-default-conf.h \
+ contiki_sys/autostart.h contiki_sys/rtimer.h contiki_sys/rtimer-arch.h \
+ contiki_sys/procinit.h contiki_sys/loader.h contiki_sys/energest.h \
+ contiki_sys/list.h

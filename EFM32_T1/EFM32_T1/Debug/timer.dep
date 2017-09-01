@@ -1,0 +1,9 @@
+Debug/timer.o: contiki_sys/timer.c contiki_sys/contiki-conf.h \
+ d:\sysgcc\arm-eabi\lib\gcc\arm-eabi\6.2.0\include\stdint.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\stdint.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\machine\_default_types.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\features.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\_newlib_version.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\_intsup.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\_stdint.h \
+ contiki_sys/clock.h contiki_sys/timer.h

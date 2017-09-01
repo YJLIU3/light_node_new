@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{61626958-2EE4-45AE-A3FF-3C86243B2832}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeIncludeSearchPath>$(LOCALAPPDATA)\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\EFM32G\Devices\Include;$(LOCALAPPDATA)\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS;$(LOCALAPPDATA)\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc;d:\sysgcc\arm-eabi\arm-eabi\include\c++\6.2.0;d:\sysgcc\arm-eabi\arm-eabi\include\c++\6.2.0\arm-eabi\thumb\cortex_m3;d:\sysgcc\arm-eabi\arm-eabi\include\c++\6.2.0\backward;d:\sysgcc\arm-eabi\lib\gcc\arm-eabi\6.2.0\include;d:\sysgcc\arm-eabi\lib\gcc\arm-eabi\6.2.0\include-fixed;d:\sysgcc\arm-eabi\arm-eabi\sys-include;d:\sysgcc\arm-eabi\arm-eabi\include;board;contiki_sys;lora_application;lora_driver;lora_mac;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>$(ProjectDir)\gcc_Debug.h;$(VISUALGDB_DIR)\gcc_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
+    <NMakeOutput>$(ProjectDir)EFM32_T1-Debug.vgdbsettings</NMakeOutput>
+    <IncludePath>D:\vs_proj\EFM32_T1\EFM32_T1\contiki_sys;D:\vs_proj\EFM32_T1\EFM32_T1\board;$(IncludePath)</IncludePath>
+    <ReferencePath />
+    <LibraryPath />
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Debug;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeIncludeSearchPath>$(LOCALAPPDATA)\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\EFM32G\Devices\Include;$(LOCALAPPDATA)\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS;d:\sysgcc\arm-eabi\arm-eabi\include\c++\6.2.0;d:\sysgcc\arm-eabi\arm-eabi\include\c++\6.2.0\arm-eabi\thumb\cortex_m3;d:\sysgcc\arm-eabi\arm-eabi\include\c++\6.2.0\backward;d:\sysgcc\arm-eabi\lib\gcc\arm-eabi\6.2.0\include;d:\sysgcc\arm-eabi\lib\gcc\arm-eabi\6.2.0\include-fixed;d:\sysgcc\arm-eabi\arm-eabi\sys-include;d:\sysgcc\arm-eabi\arm-eabi\include;$(LOCALAPPDATA)\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>$(ProjectDir)\gcc_Release.h;$(VISUALGDB_DIR)\gcc_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Release;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
+    <NMakeOutput>$(ProjectDir)EFM32_T1-Release.vgdbsettings</NMakeOutput>
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="board\Gpio_Interrupt.c" />
+    <ClCompile Include="board\GY30.c" />
+    <ClCompile Include="board\gyiic.c" />
+    <ClCompile Include="board\LED.c" />
+    <ClCompile Include="board\leusart.c" />
+    <ClCompile Include="board\myprintf.cpp" />
+    <ClCompile Include="board\rcc.c" />
+    <ClCompile Include="board\rtc.c" />
+    <ClCompile Include="board\spi0.c" />
+    <ClCompile Include="board\WDT.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\EFM32G\Devices\Source\system_efm32g.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\EFM32G\StartupFiles\startup_efm32g.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_acmp.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_adc.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_aes.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_assert.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_burtc.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_cmu.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_cryotimer.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_crypto.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_dac.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_dbg.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_dma.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_ebi.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_emu.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_gpcrc.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_gpio.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_i2c.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_idac.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_int.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_lcd.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_ldma.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_lesense.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_letimer.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_leuart.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_mpu.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_msc.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_opamp.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_pcnt.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_prs.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_rmu.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_rtc.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_rtcc.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_system.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_timer.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_usart.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_vcmp.c" />
+    <ClCompile Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\src\em_wdog.c" />
+    <ClCompile Include="contiki_sys\arg.c" />
+    <ClCompile Include="contiki_sys\autostart.c" />
+    <ClCompile Include="contiki_sys\clock.c" />
+    <ClCompile Include="contiki_sys\ctimer.c" />
+    <ClCompile Include="contiki_sys\energest.c" />
+    <ClCompile Include="contiki_sys\etimer.c" />
+    <ClCompile Include="contiki_sys\list.c" />
+    <ClCompile Include="contiki_sys\process.c" />
+    <ClCompile Include="contiki_sys\procinit.c" />
+    <ClCompile Include="contiki_sys\rtimer-arch.c" />
+    <ClCompile Include="contiki_sys\rtimer.c" />
+    <ClCompile Include="contiki_sys\stimer.c" />
+    <ClCompile Include="contiki_sys\time.c" />
+    <ClCompile Include="contiki_sys\timer.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="lora_application\app_task.c" />
+    <ClCompile Include="lora_driver\sx1276.c" />
+    <ClCompile Include="lora_driver\sx1276_hal.c" />
+    <ClCompile Include="syscall.cpp" />
+    <ClCompile Include="sysdelay.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="debug.mak" />
+    <None Include="efm32.mak" />
+    <None Include="Makefile" />
+    <None Include="release.mak" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\arm_common_tables.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\arm_const_structs.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\arm_math.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\cmsis_armcc.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\cmsis_armcc_V6.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\cmsis_gcc.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_cm0.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_cm0plus.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_cm3.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_cm4.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_cm7.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_cmFunc.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_cmInstr.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_cmSimd.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_sc000.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\CMSIS\core_sc300.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_acmp.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_adc.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_aes.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_assert.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_bitband.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_burtc.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_bus.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_chip.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_cmu.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_common.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_cryotimer.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_crypto.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_dac.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_dbg.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_dma.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_ebi.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_emu.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_gpcrc.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_gpio.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_i2c.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_idac.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_int.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_lcd.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_ldma.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_lesense.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_letimer.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_leuart.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_mpu.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_msc.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_opamp.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_pcnt.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_prs.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_ramfunc.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_rmu.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_rtc.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_rtcc.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_system.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_timer.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_usart.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_vcmp.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_version.h" />
+    <ClInclude Include="C:\Users\L.yj\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.silabs.efm32\framework\emlib\inc\em_wdog.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="EFM32_T1.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="efm32.xml" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,33 @@
+Debug/process.o: contiki_sys/process.c \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\stdio.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\_ansi.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\newlib.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\config.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\machine\ieeefp.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\features.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\_newlib_version.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\cdefs.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\machine\_default_types.h \
+ d:\sysgcc\arm-eabi\lib\gcc\arm-eabi\6.2.0\include\stddef.h \
+ d:\sysgcc\arm-eabi\lib\gcc\arm-eabi\6.2.0\include\stdarg.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\reent.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\_ansi.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\_types.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\machine\_types.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\lock.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\types.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\_stdint.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\machine\endian.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\machine\_endian.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\select.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\_sigset.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\_timeval.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\timespec.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\_timespec.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\machine\types.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\stdio.h \
+ contiki_sys/process.h contiki_sys/pt.h contiki_sys/lc.h \
+ contiki_sys/lc-switch.h contiki_sys/cc.h contiki_sys/contiki-conf.h \
+ d:\sysgcc\arm-eabi\lib\gcc\arm-eabi\6.2.0\include\stdint.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\stdint.h \
+ d:\sysgcc\arm-eabi\arm-eabi\sys-include\sys\_intsup.h contiki_sys/arg.h

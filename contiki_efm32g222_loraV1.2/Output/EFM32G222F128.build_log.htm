@@ -22,24 +22,36 @@ Dialog DLL:      TCM.DLL V1.14.5.0
  
 <h2>Project:</h2>
 H:\Graduation_design\light_data _new\light_node_new\contiki_efm32g222_loraV1.2\Project\EFM32G222F128.uvprojx
-Project File Date:  06/23/2017
+Project File Date:  08/29/2017
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.05 update 2 (build 169)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'LORA'
-compiling DHT11.c...
-DHT11.h(17): warning:  #1295-D: Deprecated declaration DHT11_Read_Data - give arg types
-  uint8_t* DHT11_Read_Data();
-DHT11.h(20): warning:  #1295-D: Deprecated declaration TxDHTFrame - give arg types
-  void TxDHTFrame();
-DHT11.h(23): warning:  #1-D: last line of file ends without a newline
+compiling app_task.c...
+..\Project\GY30.h(18): warning:  #1-D: last line of file ends without a newline
   #endif
-DHT11.c(9): warning:  #550-D: variable "AppPort" was set but never used
-  static uint8_t AppPort = LORAWAN_APP_PORT;
-DHT11.c: 4 warnings, 0 errors
+..\Project\DHT11.h(17): warning:  #1295-D: Deprecated declaration DHT11_Read_Data - give arg types
+  uint8_t* DHT11_Read_Data();
+..\Project\DHT11.h(20): warning:  #1295-D: Deprecated declaration TxDHTFrame - give arg types
+  void TxDHTFrame();
+..\Project\DHT11.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\USER\Board\app_task\app_task.c(562): warning:  #177-D: variable "trySendingFrameAgain" was declared but never referenced
+      bool trySendingFrameAgain = false;
+..\USER\Board\app_task\app_task.c(113): warning:  #177-D: variable "TxDutyCycleTime" was declared but never referenced
+  static uint32_t TxDutyCycleTime;
+..\USER\Board\app_task\app_task.c(138): warning:  #550-D: variable "TxNextPacket" was set but never used
+  static bool TxNextPacket = true;
+..\USER\Board\app_task\app_task.c(139): warning:  #550-D: variable "ScheduleNextTx" was set but never used
+  static bool ScheduleNextTx = false;
+..\USER\Board\app_task\app_task.c(168): warning:  #177-D: function "PrepareTxFrame" was declared but never referenced
+  static void PrepareTxFrame( uint8_t port )
+..\USER\Board\app_task\app_task.c(311): warning:  #177-D: function "SendFrame" was declared but never referenced
+  static bool SendFrame( void )
+..\USER\Board\app_task\app_task.c: 10 warnings, 0 errors
 linking...
 Program Size: Code=41912 RO-data=1488 RW-data=624 ZI-data=3920  
-"..\Output\EFM32G222F128.axf" - 0 Error(s), 4 Warning(s).
+"..\Output\EFM32G222F128.axf" - 0 Error(s), 10 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   H:\Graduation_design\light_data _new\light_node_new\contiki_efm32g222_loraV1.2\Project\RTE

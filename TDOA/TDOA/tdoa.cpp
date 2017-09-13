@@ -9,8 +9,6 @@ using namespace std;
 
 #define C 3*10^8
 
-float x = 0;
-float y = 0;
 int nodes = 5;
 int number_of_location0 = 5;
 int number_of_location1 = number_of_location0;

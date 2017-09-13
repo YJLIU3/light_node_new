@@ -149,23 +149,18 @@ void LEUART0_IRQHandler(void)
 
 
 
-/// 重定向c库函数printf到USART1
 int fputc(int ch, FILE *f)
 {
-    /* 发送一个字节数据到USART1 */
     LEUART_Tx(LEUART0, (uint8_t) ch);
 
-    /* 等待发送完毕 */
     while (!(LEUART0->STATUS & LEUART_STATUS_TXBL))
     ;		
 
     return (ch);
 }
 
-/// 重定向c库函数scanf到USART1
 int fgetc(FILE *f)
 {
-    /* 等待串口1输入数据 */
     while (!(LEUART0->STATUS & LEUART_STATUS_TXBL))
     ;
 
